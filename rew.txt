@@ -1,0 +1,256 @@
+-------------------------------------------------------------------------------
+Selection 1:
+TYPE: 2PG 1SG 1SF 2PF 2C
+TOTAL FPPG: 261.17
+TOTAL SALARY: 50000
+
+PG	Jrue Holiday		NO	4400	22.773	NO@LAC 10:30PM ET
+PG	Jerryd Bayless		Mil	4400	24.167	Mil@Orl 07:00PM ET
+SG	Manu Ginobili		SA	4400	23.604	SA@Den 09:00PM ET
+SF	Jerami Grant		Phi	4300	21.875	Phi@Hou 08:00PM ET
+PF	Paul Millsap		Atl	8000	41.868	Atl@Mem 08:00PM ET
+PF	Kevin Love		Cle	8300	41.450	Cle@Cha 07:00PM ET
+C	Greg Monroe		Mil	7100	36.983	Mil@Orl 07:00PM ET
+C	Andre Drummond		Det	9100	48.450	Det@OKC 08:00PM ET
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Selection 2:
+TYPE: 2PG 1SG 2SF 1PF 2C
+TOTAL FPPG: 261.122
+TOTAL SALARY: 50000
+
+PG	Jerryd Bayless		Mil	4400	24.167	Mil@Orl 07:00PM ET
+PG	Zach LaVine		Min	4800	24.600	Min@Sac 10:00PM ET
+SG	James Harden		Hou	10100	51.400	Phi@Hou 08:00PM ET
+SF	Jerami Grant		Phi	4300	21.875	Phi@Hou 08:00PM ET
+SF	Robert Covington		Phi	5100	25.679	Phi@Hou 08:00PM ET
+PF	Paul Millsap		Atl	8000	41.868	Atl@Mem 08:00PM ET
+C	Joffrey Lauvergne		Den	4200	23.083	SA@Den 09:00PM ET
+C	Andre Drummond		Det	9100	48.450	Det@OKC 08:00PM ET
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Selection 3:
+TYPE: 1PG 2SG 2SF 1PF 2C
+TOTAL FPPG: 261.032
+TOTAL SALARY: 50000
+
+PG	Jerryd Bayless		Mil	4400	24.167	Mil@Orl 07:00PM ET
+SG	Manu Ginobili		SA	4400	23.604	SA@Den 09:00PM ET
+SG	James Harden		Hou	10100	51.400	Phi@Hou 08:00PM ET
+SF	Omri Casspi		Sac	4700	22.781	Min@Sac 10:00PM ET
+SF	Robert Covington		Phi	5100	25.679	Phi@Hou 08:00PM ET
+PF	Paul Millsap		Atl	8000	41.868	Atl@Mem 08:00PM ET
+C	Joffrey Lauvergne		Den	4200	23.083	SA@Den 09:00PM ET
+C	Andre Drummond		Det	9100	48.450	Det@OKC 08:00PM ET
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Selection 4:
+TYPE: 1PG 2SG 1SF 2PF 2C
+TOTAL FPPG: 260.786
+TOTAL SALARY: 50000
+
+PG	Jerryd Bayless		Mil	4400	24.167	Mil@Orl 07:00PM ET
+SG	Hollis Thompson		Phi	3600	18.422	Phi@Hou 08:00PM ET
+SG	Manu Ginobili		SA	4400	23.604	SA@Den 09:00PM ET
+SF	Jerami Grant		Phi	4300	21.875	Phi@Hou 08:00PM ET
+PF	Paul Millsap		Atl	8000	41.868	Atl@Mem 08:00PM ET
+PF	Blake Griffin		LAC	9100	45.417	NO@LAC 10:30PM ET
+C	Greg Monroe		Mil	7100	36.983	Mil@Orl 07:00PM ET
+C	Andre Drummond		Det	9100	48.450	Det@OKC 08:00PM ET
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Selection 5:
+TYPE: 1PG 3SG 2SF 1PF 1C
+TOTAL FPPG: 260.472
+TOTAL SALARY: 50000
+
+PG	Jerryd Bayless		Mil	4400	24.167	Mil@Orl 07:00PM ET
+SG	Manu Ginobili		SA	4400	23.604	SA@Den 09:00PM ET
+SG	Jeremy Lamb		Cha	4600	23.429	Cle@Cha 07:00PM ET
+SG	James Harden		Hou	10100	51.400	Phi@Hou 08:00PM ET
+SF	Jerami Grant		Phi	4300	21.875	Phi@Hou 08:00PM ET
+SF	Robert Covington		Phi	5100	25.679	Phi@Hou 08:00PM ET
+PF	Paul Millsap		Atl	8000	41.868	Atl@Mem 08:00PM ET
+C	Andre Drummond		Det	9100	48.450	Det@OKC 08:00PM ET
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Selection 6:
+TYPE: 2PG 2SG 2SF 1PF 1C
+TOTAL FPPG: 259.964
+TOTAL SALARY: 49900
+
+PG	Greivis Vasquez		Mil	3500	17.967	Mil@Orl 07:00PM ET
+PG	Jerryd Bayless		Mil	4400	24.167	Mil@Orl 07:00PM ET
+SG	Manu Ginobili		SA	4400	23.604	SA@Den 09:00PM ET
+SG	James Harden		Hou	10100	51.400	Phi@Hou 08:00PM ET
+SF	Jerami Grant		Phi	4300	21.875	Phi@Hou 08:00PM ET
+SF	Tobias Harris		Orl	6100	30.633	Mil@Orl 07:00PM ET
+PF	Paul Millsap		Atl	8000	41.868	Atl@Mem 08:00PM ET
+C	Andre Drummond		Det	9100	48.450	Det@OKC 08:00PM ET
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Selection 7:
+TYPE: 2PG 2SG 1SF 2PF 1C
+TOTAL FPPG: 259.849
+TOTAL SALARY: 50000
+
+PG	Jerryd Bayless		Mil	4400	24.167	Mil@Orl 07:00PM ET
+PG	Zach LaVine		Min	4800	24.600	Min@Sac 10:00PM ET
+SG	Manu Ginobili		SA	4400	23.604	SA@Den 09:00PM ET
+SG	James Harden		Hou	10100	51.400	Phi@Hou 08:00PM ET
+SF	Jerami Grant		Phi	4300	21.875	Phi@Hou 08:00PM ET
+PF	Jordan Hill		Ind	4900	23.885	Chi@Ind 08:00PM ET
+PF	Paul Millsap		Atl	8000	41.868	Atl@Mem 08:00PM ET
+C	Andre Drummond		Det	9100	48.450	Det@OKC 08:00PM ET
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Selection 8:
+TYPE: 1PG 3SG 1SF 2PF 1C
+TOTAL FPPG: 259.834
+TOTAL SALARY: 49900
+
+PG	Jerryd Bayless		Mil	4400	24.167	Mil@Orl 07:00PM ET
+SG	Manu Ginobili		SA	4400	23.604	SA@Den 09:00PM ET
+SG	Jeremy Lamb		Cha	4600	23.429	Cle@Cha 07:00PM ET
+SG	James Harden		Hou	10100	51.400	Phi@Hou 08:00PM ET
+SF	Tobias Harris		Orl	6100	30.633	Mil@Orl 07:00PM ET
+PF	Jon Leuer		Pho	3200	16.283	GS@Pho 09:30PM ET
+PF	Paul Millsap		Atl	8000	41.868	Atl@Mem 08:00PM ET
+C	Andre Drummond		Det	9100	48.450	Det@OKC 08:00PM ET
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Selection 9:
+TYPE: 1PG 2SG 3SF 1PF 1C
+TOTAL FPPG: 259.794
+TOTAL SALARY: 50000
+
+PG	Jerryd Bayless		Mil	4400	24.167	Mil@Orl 07:00PM ET
+SG	Manu Ginobili		SA	4400	23.604	SA@Den 09:00PM ET
+SG	James Harden		Hou	10100	51.400	Phi@Hou 08:00PM ET
+SF	Matt Barnes		Mem	3600	17.797	Atl@Mem 08:00PM ET
+SF	Jerami Grant		Phi	4300	21.875	Phi@Hou 08:00PM ET
+SF	Tobias Harris		Orl	6100	30.633	Mil@Orl 07:00PM ET
+PF	Paul Millsap		Atl	8000	41.868	Atl@Mem 08:00PM ET
+C	Andre Drummond		Det	9100	48.450	Det@OKC 08:00PM ET
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Selection 10:
+TYPE: 3PG 1SG 1SF 2PF 1C
+TOTAL FPPG: 259.503
+TOTAL SALARY: 49900
+
+PG	Jrue Holiday		NO	4400	22.773	NO@LAC 10:30PM ET
+PG	Jerryd Bayless		Mil	4400	24.167	Mil@Orl 07:00PM ET
+PG	Darren Collison		Sac	4400	22.591	Min@Sac 10:00PM ET
+SG	Manu Ginobili		SA	4400	23.604	SA@Den 09:00PM ET
+SF	Tobias Harris		Orl	6100	30.633	Mil@Orl 07:00PM ET
+PF	Paul Millsap		Atl	8000	41.868	Atl@Mem 08:00PM ET
+PF	Blake Griffin		LAC	9100	45.417	NO@LAC 10:30PM ET
+C	Andre Drummond		Det	9100	48.450	Det@OKC 08:00PM ET
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Selection 11:
+TYPE: 1PG 2SG 2SF 2PF 1C
+TOTAL FPPG: 259.443
+TOTAL SALARY: 50000
+
+PG	Jerryd Bayless		Mil	4400	24.167	Mil@Orl 07:00PM ET
+SG	Manu Ginobili		SA	4400	23.604	SA@Den 09:00PM ET
+SG	Jeremy Lamb		Cha	4600	23.429	Cle@Cha 07:00PM ET
+SF	Jerami Grant		Phi	4300	21.875	Phi@Hou 08:00PM ET
+SF	Tobias Harris		Orl	6100	30.633	Mil@Orl 07:00PM ET
+PF	Paul Millsap		Atl	8000	41.868	Atl@Mem 08:00PM ET
+PF	Blake Griffin		LAC	9100	45.417	NO@LAC 10:30PM ET
+C	Andre Drummond		Det	9100	48.450	Det@OKC 08:00PM ET
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Selection 12:
+TYPE: 2PG 1SG 2SF 2PF 1C
+TOTAL FPPG: 259.276
+TOTAL SALARY: 50000
+
+PG	Jerryd Bayless		Mil	4400	24.167	Mil@Orl 07:00PM ET
+PG	Zach LaVine		Min	4800	24.600	Min@Sac 10:00PM ET
+SG	James Harden		Hou	10100	51.400	Phi@Hou 08:00PM ET
+SF	Jerami Grant		Phi	4300	21.875	Phi@Hou 08:00PM ET
+SF	Tobias Harris		Orl	6100	30.633	Mil@Orl 07:00PM ET
+PF	Jon Leuer		Pho	3200	16.283	GS@Pho 09:30PM ET
+PF	Paul Millsap		Atl	8000	41.868	Atl@Mem 08:00PM ET
+C	Andre Drummond		Det	9100	48.450	Det@OKC 08:00PM ET
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Selection 13:
+TYPE: 2PG 1SG 1SF 3PF 1C
+TOTAL FPPG: 259.158
+TOTAL SALARY: 50000
+
+PG	Jrue Holiday		NO	4400	22.773	NO@LAC 10:30PM ET
+PG	Jerryd Bayless		Mil	4400	24.167	Mil@Orl 07:00PM ET
+SG	Manu Ginobili		SA	4400	23.604	SA@Den 09:00PM ET
+SF	Carmelo Anthony		NY	8200	40.563	Mia@NY 07:30PM ET
+PF	Jon Leuer		Pho	3200	16.283	GS@Pho 09:30PM ET
+PF	Paul Millsap		Atl	8000	41.868	Atl@Mem 08:00PM ET
+PF	Kevin Love		Cle	8300	41.450	Cle@Cha 07:00PM ET
+C	Andre Drummond		Det	9100	48.450	Det@OKC 08:00PM ET
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Selection 14:
+TYPE: 3PG 1SG 2SF 1PF 1C
+TOTAL FPPG: 259.133
+TOTAL SALARY: 49900
+
+PG	Greivis Vasquez		Mil	3500	17.967	Mil@Orl 07:00PM ET
+PG	Jrue Holiday		NO	4400	22.773	NO@LAC 10:30PM ET
+PG	Jerryd Bayless		Mil	4400	24.167	Mil@Orl 07:00PM ET
+SG	James Harden		Hou	10100	51.400	Phi@Hou 08:00PM ET
+SF	Jerami Grant		Phi	4300	21.875	Phi@Hou 08:00PM ET
+SF	Tobias Harris		Orl	6100	30.633	Mil@Orl 07:00PM ET
+PF	Paul Millsap		Atl	8000	41.868	Atl@Mem 08:00PM ET
+C	Andre Drummond		Det	9100	48.450	Det@OKC 08:00PM ET
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Selection 15:
+TYPE: 1PG 2SG 1SF 3PF 1C
+TOTAL FPPG: 259.055
+TOTAL SALARY: 50000
+
+PG	Jerryd Bayless		Mil	4400	24.167	Mil@Orl 07:00PM ET
+SG	Langston Galloway		NY	4000	20.344	Mia@NY 07:30PM ET
+SG	Manu Ginobili		SA	4400	23.604	SA@Den 09:00PM ET
+SF	Jerami Grant		Phi	4300	21.875	Phi@Hou 08:00PM ET
+PF	Draymond Green		GS	7500	37.297	GS@Pho 09:30PM ET
+PF	Paul Millsap		Atl	8000	41.868	Atl@Mem 08:00PM ET
+PF	Kevin Love		Cle	8300	41.450	Cle@Cha 07:00PM ET
+C	Andre Drummond		Det	9100	48.450	Det@OKC 08:00PM ET
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Selection 16:
+TYPE: 2PG 1SG 3SF 1PF 1C
+TOTAL FPPG: 258.963
+TOTAL SALARY: 50000
+
+PG	Jrue Holiday		NO	4400	22.773	NO@LAC 10:30PM ET
+PG	Jerryd Bayless		Mil	4400	24.167	Mil@Orl 07:00PM ET
+SG	James Harden		Hou	10100	51.400	Phi@Hou 08:00PM ET
+SF	Matt Barnes		Mem	3600	17.797	Atl@Mem 08:00PM ET
+SF	Jerami Grant		Phi	4300	21.875	Phi@Hou 08:00PM ET
+SF	Tobias Harris		Orl	6100	30.633	Mil@Orl 07:00PM ET
+PF	Paul Millsap		Atl	8000	41.868	Atl@Mem 08:00PM ET
+C	Andre Drummond		Det	9100	48.450	Det@OKC 08:00PM ET
+-------------------------------------------------------------------------------
+

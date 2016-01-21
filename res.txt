@@ -1,0 +1,224 @@
+-------------------------------------------------------------------------------
+Selection 1:
+TOTAL FPPG: 276.469
+
+PG	Marcus Smart		Bos	4800	26.917	Ind@Bos 07:30PM ET
+PG	Ish Smith		NO	4800	28.964	NO@Atl 08:00PM ET
+SG	Marcus Thornton		Hou	5200	28.950	Bkn@Hou 08:00PM ET
+SF	Jae Crowder		Bos	5000	27.583	Ind@Bos 07:30PM ET
+PF	Ryan Anderson		NO	5700	31.321	NO@Atl 08:00PM ET
+PF	Paul Millsap		Atl	7900	41.278	NO@Atl 08:00PM ET
+C	Dwight Howard		Hou	7200	38.563	Bkn@Hou 08:00PM ET
+C	Andre Drummond		Det	9400	52.893	Det@Sac 10:00PM ET
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Selection 2:
+TOTAL FPPG: 275.889
+
+PG	Ish Smith		NO	4800	28.964	NO@Atl 08:00PM ET
+PG	Stephen Curry		GS	10500	54.469	GS@Mem 08:00PM ET
+SG	Manu Ginóbili		SA	4300	23.679	SA@Por 10:30PM ET
+SF	Metta World Peace		LAL	3100	18.417	LAL@Orl 07:00PM ET
+SF	Jae Crowder		Bos	5000	27.583	Ind@Bos 07:30PM ET
+PF	Ryan Anderson		NO	5700	31.321	NO@Atl 08:00PM ET
+C	Dwight Howard		Hou	7200	38.563	Bkn@Hou 08:00PM ET
+C	Andre Drummond		Det	9400	52.893	Det@Sac 10:00PM ET
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Selection 3:
+TOTAL FPPG: 275.7
+
+PG	Ish Smith		NO	4800	28.964	NO@Atl 08:00PM ET
+PG	Reggie Jackson		Det	7300	38.286	Det@Sac 10:00PM ET
+SG	Marcus Thornton		Hou	5200	28.950	Bkn@Hou 08:00PM ET
+SF	Metta World Peace		LAL	3100	18.417	LAL@Orl 07:00PM ET
+SF	Jae Crowder		Bos	5000	27.583	Ind@Bos 07:30PM ET
+PF	Ryan Anderson		NO	5700	31.321	NO@Atl 08:00PM ET
+PF	Blake Griffin		LAC	9500	49.286	LAC@Dal 08:00PM ET
+C	Andre Drummond		Det	9400	52.893	Det@Sac 10:00PM ET
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Selection 4:
+TOTAL FPPG: 275.514
+
+PG	Ish Smith		NO	4800	28.964	NO@Atl 08:00PM ET
+PG	Reggie Jackson		Det	7300	38.286	Det@Sac 10:00PM ET
+PG	Stephen Curry		GS	10500	54.469	GS@Mem 08:00PM ET
+SG	Marcus Thornton		Hou	5200	28.950	Bkn@Hou 08:00PM ET
+SF	Metta World Peace		LAL	3100	18.417	LAL@Orl 07:00PM ET
+PF	Clint Capela		Hou	3900	22.214	Bkn@Hou 08:00PM ET
+PF	Ryan Anderson		NO	5700	31.321	NO@Atl 08:00PM ET
+C	Andre Drummond		Det	9400	52.893	Det@Sac 10:00PM ET
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Selection 5:
+TOTAL FPPG: 275.472
+
+PG	Ish Smith		NO	4800	28.964	NO@Atl 08:00PM ET
+PG	Michael Carter-Williams		Mil	6300	32.875	Mil@Den 09:00PM ET
+PG	Stephen Curry		GS	10500	54.469	GS@Mem 08:00PM ET
+SG	Marcus Thornton		Hou	5200	28.950	Bkn@Hou 08:00PM ET
+SF	Metta World Peace		LAL	3100	18.417	LAL@Orl 07:00PM ET
+SF	Jae Crowder		Bos	5000	27.583	Ind@Bos 07:30PM ET
+PF	Ryan Anderson		NO	5700	31.321	NO@Atl 08:00PM ET
+C	Andre Drummond		Det	9400	52.893	Det@Sac 10:00PM ET
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Selection 6:
+TOTAL FPPG: 275.456
+
+PG	Marcus Smart		Bos	4800	26.917	Ind@Bos 07:30PM ET
+PG	Ish Smith		NO	4800	28.964	NO@Atl 08:00PM ET
+SG	Marcus Thornton		Hou	5200	28.950	Bkn@Hou 08:00PM ET
+SF	Jae Crowder		Bos	5000	27.583	Ind@Bos 07:30PM ET
+PF	Jared Sullinger		Bos	5600	29.542	Ind@Bos 07:30PM ET
+PF	Ryan Anderson		NO	5700	31.321	NO@Atl 08:00PM ET
+PF	Blake Griffin		LAC	9500	49.286	LAC@Dal 08:00PM ET
+C	Andre Drummond		Det	9400	52.893	Det@Sac 10:00PM ET
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Selection 7:
+TOTAL FPPG: 274.867
+
+PG	Ish Smith		NO	4800	28.964	NO@Atl 08:00PM ET
+PG	Stephen Curry		GS	10500	54.469	GS@Mem 08:00PM ET
+SG	Manu Ginóbili		SA	4300	23.679	SA@Por 10:30PM ET
+SG	Marcus Thornton		Hou	5200	28.950	Bkn@Hou 08:00PM ET
+SF	Metta World Peace		LAL	3100	18.417	LAL@Orl 07:00PM ET
+SF	Paul George		Ind	8800	45.281	Ind@Bos 07:30PM ET
+PF	Clint Capela		Hou	3900	22.214	Bkn@Hou 08:00PM ET
+C	Andre Drummond		Det	9400	52.893	Det@Sac 10:00PM ET
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Selection 8:
+TOTAL FPPG: 274.847
+
+PG	Ish Smith		NO	4800	28.964	NO@Atl 08:00PM ET
+SG	Manu Ginóbili		SA	4300	23.679	SA@Por 10:30PM ET
+SG	Marcus Thornton		Hou	5200	28.950	Bkn@Hou 08:00PM ET
+SF	Jae Crowder		Bos	5000	27.583	Ind@Bos 07:30PM ET
+PF	Clint Capela		Hou	3900	22.214	Bkn@Hou 08:00PM ET
+PF	Paul Millsap		Atl	7900	41.278	NO@Atl 08:00PM ET
+PF	Blake Griffin		LAC	9500	49.286	LAC@Dal 08:00PM ET
+C	Andre Drummond		Det	9400	52.893	Det@Sac 10:00PM ET
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Selection 9:
+TOTAL FPPG: 274.407
+
+PG	Ish Smith		NO	4800	28.964	NO@Atl 08:00PM ET
+PG	Stephen Curry		GS	10500	54.469	GS@Mem 08:00PM ET
+SG	Kent Bazemore		Atl	5200	27.222	NO@Atl 08:00PM ET
+SG	Marcus Thornton		Hou	5200	28.950	Bkn@Hou 08:00PM ET
+SF	Metta World Peace		LAL	3100	18.417	LAL@Orl 07:00PM ET
+PF	Clint Capela		Hou	3900	22.214	Bkn@Hou 08:00PM ET
+PF	Paul Millsap		Atl	7900	41.278	NO@Atl 08:00PM ET
+C	Andre Drummond		Det	9400	52.893	Det@Sac 10:00PM ET
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Selection 10:
+TOTAL FPPG: 274.331
+
+PG	Ish Smith		NO	4800	28.964	NO@Atl 08:00PM ET
+PG	Stephen Curry		GS	10500	54.469	GS@Mem 08:00PM ET
+SG	Langston Galloway		NY	4600	24.594	NY@Cha 07:00PM ET
+SF	Thabo Sefolosha		Atl	3100	18.125	NO@Atl 08:00PM ET
+SF	Metta World Peace		LAL	3100	18.417	LAL@Orl 07:00PM ET
+SF	Jae Crowder		Bos	5000	27.583	Ind@Bos 07:30PM ET
+PF	Blake Griffin		LAC	9500	49.286	LAC@Dal 08:00PM ET
+C	Andre Drummond		Det	9400	52.893	Det@Sac 10:00PM ET
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Selection 11:
+TOTAL FPPG: 274.203
+
+PG	Ish Smith		NO	4800	28.964	NO@Atl 08:00PM ET
+SG	Kentavious Caldwell-Pope		Det	5000	25.750	Det@Sac 10:00PM ET
+SG	Marcus Thornton		Hou	5200	28.950	Bkn@Hou 08:00PM ET
+SF	Jae Crowder		Bos	5000	27.583	Ind@Bos 07:30PM ET
+PF	Clint Capela		Hou	3900	22.214	Bkn@Hou 08:00PM ET
+PF	Blake Griffin		LAC	9500	49.286	LAC@Dal 08:00PM ET
+C	Dwight Howard		Hou	7200	38.563	Bkn@Hou 08:00PM ET
+C	Andre Drummond		Det	9400	52.893	Det@Sac 10:00PM ET
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Selection 12:
+TOTAL FPPG: 273.824
+
+PG	Ish Smith		NO	4800	28.964	NO@Atl 08:00PM ET
+SG	Manu Ginóbili		SA	4300	23.679	SA@Por 10:30PM ET
+SG	Marcus Thornton		Hou	5200	28.950	Bkn@Hou 08:00PM ET
+SF	Andre Iguodala		GS	4600	23.906	GS@Mem 08:00PM ET
+SF	Jae Crowder		Bos	5000	27.583	Ind@Bos 07:30PM ET
+PF	Blake Griffin		LAC	9500	49.286	LAC@Dal 08:00PM ET
+C	Dwight Howard		Hou	7200	38.563	Bkn@Hou 08:00PM ET
+C	Andre Drummond		Det	9400	52.893	Det@Sac 10:00PM ET
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Selection 13:
+TOTAL FPPG: 273.227
+
+PG	Ish Smith		NO	4800	28.964	NO@Atl 08:00PM ET
+SG	Kent Bazemore		Atl	5200	27.222	NO@Atl 08:00PM ET
+SG	Marcus Thornton		Hou	5200	28.950	Bkn@Hou 08:00PM ET
+SF	Metta World Peace		LAL	3100	18.417	LAL@Orl 07:00PM ET
+SF	Paul George		Ind	8800	45.281	Ind@Bos 07:30PM ET
+PF	Clint Capela		Hou	3900	22.214	Bkn@Hou 08:00PM ET
+PF	Blake Griffin		LAC	9500	49.286	LAC@Dal 08:00PM ET
+C	Andre Drummond		Det	9400	52.893	Det@Sac 10:00PM ET
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Selection 14:
+TOTAL FPPG: 273.222
+
+PG	Ish Smith		NO	4800	28.964	NO@Atl 08:00PM ET
+SG	Manu Ginóbili		SA	4300	23.679	SA@Por 10:30PM ET
+SG	Langston Galloway		NY	4600	24.594	NY@Cha 07:00PM ET
+SG	Marcus Thornton		Hou	5200	28.950	Bkn@Hou 08:00PM ET
+SF	Jae Crowder		Bos	5000	27.583	Ind@Bos 07:30PM ET
+SF	Paul George		Ind	8800	45.281	Ind@Bos 07:30PM ET
+PF	Paul Millsap		Atl	7900	41.278	NO@Atl 08:00PM ET
+C	Andre Drummond		Det	9400	52.893	Det@Sac 10:00PM ET
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Selection 15:
+TOTAL FPPG: 272.534
+
+PG	Ish Smith		NO	4800	28.964	NO@Atl 08:00PM ET
+SG	Manu Ginóbili		SA	4300	23.679	SA@Por 10:30PM ET
+SG	Marcus Thornton		Hou	5200	28.950	Bkn@Hou 08:00PM ET
+SF	Andre Iguodala		GS	4600	23.906	GS@Mem 08:00PM ET
+SF	Jae Crowder		Bos	5000	27.583	Ind@Bos 07:30PM ET
+SF	Paul George		Ind	8800	45.281	Ind@Bos 07:30PM ET
+PF	Paul Millsap		Atl	7900	41.278	NO@Atl 08:00PM ET
+C	Andre Drummond		Det	9400	52.893	Det@Sac 10:00PM ET
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Selection 16:
+TOTAL FPPG: 272.293
+
+PG	Ish Smith		NO	4800	28.964	NO@Atl 08:00PM ET
+SG	Manu Ginóbili		SA	4300	23.679	SA@Por 10:30PM ET
+SG	Marcus Thornton		Hou	5200	28.950	Bkn@Hou 08:00PM ET
+SG	Victor Oladipo		Orl	7500	37.625	LAL@Orl 07:00PM ET
+SF	Jae Crowder		Bos	5000	27.583	Ind@Bos 07:30PM ET
+PF	Ryan Anderson		NO	5700	31.321	NO@Atl 08:00PM ET
+PF	Paul Millsap		Atl	7900	41.278	NO@Atl 08:00PM ET
+C	Andre Drummond		Det	9400	52.893	Det@Sac 10:00PM ET
+-------------------------------------------------------------------------------
+

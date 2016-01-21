@@ -1,0 +1,256 @@
+-------------------------------------------------------------------------------
+Selection 1:
+TYPE: 3PG 1SG 1SF 2PF 1C
+TOTAL FPPG: 257.858
+TOTAL SALARY: 50000
+
+PG	Devin Harris		Dal	3200	17.200	Den@Dal 08:30PM ET
+PG	J.J. Barea		Dal	3300	17.391	Den@Dal 08:30PM ET
+PG	Jarrett Jack		Bkn	6100	31.214	Bkn@Cle 07:30PM ET
+SG	C.J. McCollum		Por	6500	31.625	LAL@Por 10:00PM ET
+SF	Kawhi Leonard		SA	8400	42.850	Atl@SA 08:30PM ET
+PF	Draymond Green		GS	7400	38.103	Sac@GS 10:30PM ET
+PF	Paul Millsap		Atl	7800	42.125	Atl@SA 08:30PM ET
+C	Brook Lopez		Bkn	7300	37.350	Bkn@Cle 07:30PM ET
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Selection 2:
+TYPE: 2PG 1SG 1SF 3PF 1C
+TOTAL FPPG: 257.639
+TOTAL SALARY: 50000
+
+PG	Devin Harris		Dal	3200	17.200	Den@Dal 08:30PM ET
+PG	J.J. Barea		Dal	3300	17.391	Den@Dal 08:30PM ET
+SG	DeMar DeRozan		Tor	7000	34.406	Tor@Was 07:00PM ET
+SF	Kawhi Leonard		SA	8400	42.850	Atl@SA 08:30PM ET
+PF	Dirk Nowitzki		Dal	6200	31.550	Den@Dal 08:30PM ET
+PF	Draymond Green		GS	7400	38.103	Sac@GS 10:30PM ET
+PF	Paul Millsap		Atl	7800	42.125	Atl@SA 08:30PM ET
+C	Al Horford		Atl	6700	34.014	Atl@SA 08:30PM ET
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Selection 3:
+TYPE: 2PG 1SG 1SF 2PF 2C
+TOTAL FPPG: 257.519
+TOTAL SALARY: 50000
+
+PG	Devin Harris		Dal	3200	17.200	Den@Dal 08:30PM ET
+PG	J.J. Barea		Dal	3300	17.391	Den@Dal 08:30PM ET
+SG	DeMar DeRozan		Tor	7000	34.406	Tor@Was 07:00PM ET
+SF	Kawhi Leonard		SA	8400	42.850	Atl@SA 08:30PM ET
+PF	Draymond Green		GS	7400	38.103	Sac@GS 10:30PM ET
+PF	Paul Millsap		Atl	7800	42.125	Atl@SA 08:30PM ET
+C	Zaza Pachulia		Dal	5600	28.094	Den@Dal 08:30PM ET
+C	Brook Lopez		Bkn	7300	37.350	Bkn@Cle 07:30PM ET
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Selection 4:
+TYPE: 3PG 1SG 2SF 1PF 1C
+TOTAL FPPG: 257.289
+TOTAL SALARY: 50000
+
+PG	Devin Harris		Dal	3200	17.200	Den@Dal 08:30PM ET
+PG	J.J. Barea		Dal	3300	17.391	Den@Dal 08:30PM ET
+PG	Lou Williams		LAL	3900	20.357	LAL@Por 10:00PM ET
+SG	C.J. McCollum		Por	6500	31.625	LAL@Por 10:00PM ET
+SF	Kawhi Leonard		SA	8400	42.850	Atl@SA 08:30PM ET
+SF	LeBron James		Cle	9600	48.391	Bkn@Cle 07:30PM ET
+PF	Paul Millsap		Atl	7800	42.125	Atl@SA 08:30PM ET
+C	Brook Lopez		Bkn	7300	37.350	Bkn@Cle 07:30PM ET
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Selection 5:
+TYPE: 2PG 1SG 2SF 2PF 1C
+TOTAL FPPG: 256.715
+TOTAL SALARY: 50000
+
+PG	J.J. Barea		Dal	3300	17.391	Den@Dal 08:30PM ET
+PG	Jarrett Jack		Bkn	6100	31.214	Bkn@Cle 07:30PM ET
+SG	Kyle Korver		Atl	4400	21.391	Atl@SA 08:30PM ET
+SF	Kawhi Leonard		SA	8400	42.850	Atl@SA 08:30PM ET
+SF	LeBron James		Cle	9600	48.391	Bkn@Cle 07:30PM ET
+PF	Draymond Green		GS	7400	38.103	Sac@GS 10:30PM ET
+PF	Paul Millsap		Atl	7800	42.125	Atl@SA 08:30PM ET
+C	JaVale McGee		Dal	3000	15.250	Den@Dal 08:30PM ET
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Selection 6:
+TYPE: 2PG 1SG 2SF 1PF 2C
+TOTAL FPPG: 256.558
+TOTAL SALARY: 50000
+
+PG	Devin Harris		Dal	3200	17.200	Den@Dal 08:30PM ET
+PG	Lou Williams		LAL	3900	20.357	LAL@Por 10:00PM ET
+SG	Alec Burks		Uta	5000	24.089	NO@Uta 09:00PM ET
+SF	Kawhi Leonard		SA	8400	42.850	Atl@SA 08:30PM ET
+SF	LeBron James		Cle	9600	48.391	Bkn@Cle 07:30PM ET
+PF	Paul Millsap		Atl	7800	42.125	Atl@SA 08:30PM ET
+C	Roy Hibbert		LAL	4800	24.196	LAL@Por 10:00PM ET
+C	Brook Lopez		Bkn	7300	37.350	Bkn@Cle 07:30PM ET
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Selection 7:
+TYPE: 2PG 2SG 1SF 2PF 1C
+TOTAL FPPG: 256.48
+TOTAL SALARY: 50000
+
+PG	Devin Harris		Dal	3200	17.200	Den@Dal 08:30PM ET
+PG	Lou Williams		LAL	3900	20.357	LAL@Por 10:00PM ET
+SG	Alec Burks		Uta	5000	24.089	NO@Uta 09:00PM ET
+SG	DeMar DeRozan		Tor	7000	34.406	Tor@Was 07:00PM ET
+SF	Kawhi Leonard		SA	8400	42.850	Atl@SA 08:30PM ET
+PF	Draymond Green		GS	7400	38.103	Sac@GS 10:30PM ET
+PF	Paul Millsap		Atl	7800	42.125	Atl@SA 08:30PM ET
+C	Brook Lopez		Bkn	7300	37.350	Bkn@Cle 07:30PM ET
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Selection 8:
+TYPE: 1PG 2SG 1SF 2PF 2C
+TOTAL FPPG: 256.175
+TOTAL SALARY: 50000
+
+PG	Devin Harris		Dal	3200	17.200	Den@Dal 08:30PM ET
+SG	Kyle Korver		Atl	4400	21.391	Atl@SA 08:30PM ET
+SG	DeMar DeRozan		Tor	7000	34.406	Tor@Was 07:00PM ET
+SF	Kawhi Leonard		SA	8400	42.850	Atl@SA 08:30PM ET
+PF	Draymond Green		GS	7400	38.103	Sac@GS 10:30PM ET
+PF	Paul Millsap		Atl	7800	42.125	Atl@SA 08:30PM ET
+C	Andrew Bogut		GS	4500	22.750	Sac@GS 10:30PM ET
+C	Brook Lopez		Bkn	7300	37.350	Bkn@Cle 07:30PM ET
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Selection 9:
+TYPE: 1PG 2SG 1SF 3PF 1C
+TOTAL FPPG: 256.132
+TOTAL SALARY: 50000
+
+PG	J.J. Barea		Dal	3300	17.391	Den@Dal 08:30PM ET
+SG	Kyle Korver		Atl	4400	21.391	Atl@SA 08:30PM ET
+SG	DeMar DeRozan		Tor	7000	34.406	Tor@Was 07:00PM ET
+SF	Kawhi Leonard		SA	8400	42.850	Atl@SA 08:30PM ET
+PF	Dwight Powell		Dal	4400	22.516	Den@Dal 08:30PM ET
+PF	Draymond Green		GS	7400	38.103	Sac@GS 10:30PM ET
+PF	Paul Millsap		Atl	7800	42.125	Atl@SA 08:30PM ET
+C	Brook Lopez		Bkn	7300	37.350	Bkn@Cle 07:30PM ET
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Selection 10:
+TYPE: 2PG 1SG 3SF 1PF 1C
+TOTAL FPPG: 256.046
+TOTAL SALARY: 50000
+
+PG	Devin Harris		Dal	3200	17.200	Den@Dal 08:30PM ET
+PG	Trey Burke		Uta	3700	18.536	NO@Uta 09:00PM ET
+SG	DeMar DeRozan		Tor	7000	34.406	Tor@Was 07:00PM ET
+SF	Jared Dudley		Was	3000	15.188	Tor@Was 07:00PM ET
+SF	Kawhi Leonard		SA	8400	42.850	Atl@SA 08:30PM ET
+SF	LeBron James		Cle	9600	48.391	Bkn@Cle 07:30PM ET
+PF	Paul Millsap		Atl	7800	42.125	Atl@SA 08:30PM ET
+C	Brook Lopez		Bkn	7300	37.350	Bkn@Cle 07:30PM ET
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Selection 11:
+TYPE: 1PG 2SG 2SF 2PF 1C
+TOTAL FPPG: 255.511
+TOTAL SALARY: 50000
+
+PG	Devin Harris		Dal	3200	17.200	Den@Dal 08:30PM ET
+SG	C.J. McCollum		Por	6500	31.625	LAL@Por 10:00PM ET
+SG	DeMar DeRozan		Tor	7000	34.406	Tor@Was 07:00PM ET
+SF	Jared Dudley		Was	3000	15.188	Tor@Was 07:00PM ET
+SF	Kawhi Leonard		SA	8400	42.850	Atl@SA 08:30PM ET
+PF	Draymond Green		GS	7400	38.103	Sac@GS 10:30PM ET
+PF	Paul Millsap		Atl	7800	42.125	Atl@SA 08:30PM ET
+C	Al Horford		Atl	6700	34.014	Atl@SA 08:30PM ET
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Selection 12:
+TYPE: 2PG 2SG 2SF 1PF 1C
+TOTAL FPPG: 255.115
+TOTAL SALARY: 50000
+
+PG	Lou Williams		LAL	3900	20.357	LAL@Por 10:00PM ET
+PG	Jarrett Jack		Bkn	6100	31.214	Bkn@Cle 07:30PM ET
+SG	C.J. McCollum		Por	6500	31.625	LAL@Por 10:00PM ET
+SG	DeMar DeRozan		Tor	7000	34.406	Tor@Was 07:00PM ET
+SF	Jared Dudley		Was	3000	15.188	Tor@Was 07:00PM ET
+SF	Kawhi Leonard		SA	8400	42.850	Atl@SA 08:30PM ET
+PF	Paul Millsap		Atl	7800	42.125	Atl@SA 08:30PM ET
+C	Brook Lopez		Bkn	7300	37.350	Bkn@Cle 07:30PM ET
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Selection 13:
+TYPE: 1PG 2SG 2SF 1PF 2C
+TOTAL FPPG: 254.949
+TOTAL SALARY: 50000
+
+PG	J.J. Barea		Dal	3300	17.391	Den@Dal 08:30PM ET
+SG	C.J. McCollum		Por	6500	31.625	LAL@Por 10:00PM ET
+SG	DeMar DeRozan		Tor	7000	34.406	Tor@Was 07:00PM ET
+SF	Jared Dudley		Was	3000	15.188	Tor@Was 07:00PM ET
+SF	Kawhi Leonard		SA	8400	42.850	Atl@SA 08:30PM ET
+PF	Paul Millsap		Atl	7800	42.125	Atl@SA 08:30PM ET
+C	Al Horford		Atl	6700	34.014	Atl@SA 08:30PM ET
+C	Brook Lopez		Bkn	7300	37.350	Bkn@Cle 07:30PM ET
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Selection 14:
+TYPE: 1PG 3SG 1SF 2PF 1C
+TOTAL FPPG: 254.733
+TOTAL SALARY: 50000
+
+PG	Devin Harris		Dal	3200	17.200	Den@Dal 08:30PM ET
+SG	Kyle Korver		Atl	4400	21.391	Atl@SA 08:30PM ET
+SG	Alec Burks		Uta	5000	24.089	NO@Uta 09:00PM ET
+SG	C.J. McCollum		Por	6500	31.625	LAL@Por 10:00PM ET
+SF	Kawhi Leonard		SA	8400	42.850	Atl@SA 08:30PM ET
+PF	Draymond Green		GS	7400	38.103	Sac@GS 10:30PM ET
+PF	Paul Millsap		Atl	7800	42.125	Atl@SA 08:30PM ET
+C	Brook Lopez		Bkn	7300	37.350	Bkn@Cle 07:30PM ET
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Selection 15:
+TYPE: 1PG 2SG 3SF 1PF 1C
+TOTAL FPPG: 254.586
+TOTAL SALARY: 50000
+
+PG	Devin Harris		Dal	3200	17.200	Den@Dal 08:30PM ET
+SG	Marco Belinelli		Sac	4300	20.412	Sac@GS 10:30PM ET
+SG	DeMar DeRozan		Tor	7000	34.406	Tor@Was 07:00PM ET
+SF	Jared Dudley		Was	3000	15.188	Tor@Was 07:00PM ET
+SF	Kawhi Leonard		SA	8400	42.850	Atl@SA 08:30PM ET
+SF	LeBron James		Cle	9600	48.391	Bkn@Cle 07:30PM ET
+PF	Paul Millsap		Atl	7800	42.125	Atl@SA 08:30PM ET
+C	Al Horford		Atl	6700	34.014	Atl@SA 08:30PM ET
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+Selection 16:
+TYPE: 1PG 3SG 2SF 1PF 1C
+TOTAL FPPG: 253.808
+TOTAL SALARY: 50000
+
+PG	Devin Harris		Dal	3200	17.200	Den@Dal 08:30PM ET
+SG	Marco Belinelli		Sac	4300	20.412	Sac@GS 10:30PM ET
+SG	Kyle Korver		Atl	4400	21.391	Atl@SA 08:30PM ET
+SG	Alec Burks		Uta	5000	24.089	NO@Uta 09:00PM ET
+SF	Kawhi Leonard		SA	8400	42.850	Atl@SA 08:30PM ET
+SF	LeBron James		Cle	9600	48.391	Bkn@Cle 07:30PM ET
+PF	Paul Millsap		Atl	7800	42.125	Atl@SA 08:30PM ET
+C	Brook Lopez		Bkn	7300	37.350	Bkn@Cle 07:30PM ET
+-------------------------------------------------------------------------------
+

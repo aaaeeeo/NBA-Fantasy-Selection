@@ -5,11 +5,15 @@
 #include <string>
 #include <sstream>
 #include <map>
+#include "include/rapidjson/rapidjson.h"
+#include "include/rapidjson/document.h"
 
 using namespace std;
+using namespace rapidjson;
 
 #define MAX_LINES 20000
 #define MAX_SALARY 500
+#define MAX_SALARY_TT 200
 #define MAX_POS 3
 
 #define CLEAR() printf("\033[2J")
@@ -34,6 +38,18 @@ int main(int argc, char *argv[])
     string ori_data[MAX_LINES][6];
 	string line;
     string word;
+    bool is_tt = false;
+    int max_salary;
+
+    if(argc>1) 
+    {
+        int val = atoi(argv[1]);
+        if(val>0 && val<=MAX_SALARY) {
+            max_salary = val;
+            fprintf(stderr, "\033[32mSet max salary to %d.\033[0m\n", max_salary);
+        }
+    }
+
 
     fprintf(stderr,"\n\n\033[34m\033[47mReading from stdin ...\033[0m\n");
     int i=0;
@@ -45,32 +61,50 @@ int main(int argc, char *argv[])
         istringstream is;
         is.str(line);
         int j=0;
-        while(getline(is,word,','))
+        if (is_tt == true || *line.begin() == '{' || *line.begin() == '[')
         {
-            if (*word.begin() == '"')
+            is_tt = true;
+            Document d;
+            const char * cline = line.c_str();
+            d.Parse(cline);
+            string pos_map[6] = {"","PG", "SG", "SF", "PF", "C"};
+            ori_data[i][0]=pos_map[stoi(d["position"].GetString())];
+            ori_data[i][1]=d["player"].GetString();
+            ori_data[i][2]=to_string(d["salary"].GetInt());
+            ori_data[i][4]=d["point"].GetString();
+            ori_data[i][5]=d["team"].GetString();
+            //cerr<<ori_data[i][0]<<" "<<ori_data[i][1]<<" "<<ori_data[i][2]<<" "<<ori_data[i][4]<<" "<<ori_data[i][5]<<endl;
+        } 
+        else 
+        {
+            while(getline(is,word,','))
+            {   
+                if (*word.begin() == '"')
                 word.erase(word.begin());
-            if (*(--word.end()) == '"')
-                word.erase(--word.end());
-            if (*(word.end()-2) == '"')
-            {
-            	word.erase(--word.end());
-            	word.erase(--word.end());
+                if (*(--word.end()) == '"')
+                    word.erase(--word.end());
+                if (*(word.end()-2) == '"')
+                {
+                    word.erase(--word.end());
+                    word.erase(--word.end());
+                }
+                ori_data[i][j]=word;
+                j++;
+                //cerr<<word<<endl;
             }
-            ori_data[i][j]=word;
-            j++;
-            //cerr<<word<<endl;
+            if(j!=6)
+                return err_input();
         }
-        if(j!=6)
-            return err_input();
         i++;
         //cerr<<"rd.."<<i<<endl;
     }
 
     int player_num = i-1;
-    int max_salary = MAX_SALARY;
+    max_salary = (is_tt ? MAX_SALARY_TT : MAX_SALARY);
     int max_pos_num = 3;
 
     fprintf(stderr, "\033[32mDONE: %d players read.\033[0m\n\n", player_num);
+    fprintf(stderr, "\033[32mSet max salary to %d.\033[0m\n", max_salary);
     //cerr<<"DONE: "<<player_num<<" players read."<<endl<<endl;
     fprintf(stderr,"\033[?25l\033[34m\033[47mComputing the optimal selection ...\033[0m\n\033[31m0%%\033[0m\n");
 
@@ -122,7 +156,8 @@ int main(int argc, char *argv[])
                         {
                             for(int e=0; e<=MAX_POS; e++)
                             {
-                                int salary = stoi(ori_data[i][2])/100;
+                                int salary  = stoi(ori_data[i][2]);
+                                if(!is_tt)  salary /= 100;
                                 double fppg = stof(ori_data[i][4]);
                                 string pos = ori_data[i][0];
                                 double max = dp[i-1][j][a][b][c][d][e];
@@ -171,7 +206,7 @@ int main(int argc, char *argv[])
                 int d = 1 + (j==1) + (k==4);
                 int e = 1 + (k==5);
 
-                double subop = dp[player_num][MAX_SALARY][a][b][c][d][e];
+                double subop = dp[player_num][max_salary][a][b][c][d][e];
                 res[subop]=count;
                 //cerr<<count<<" : "<<a<<b<<c<<d<<e<<" : "<<subop<<endl;
                 count++;
@@ -203,13 +238,14 @@ int main(int argc, char *argv[])
         map<int, int> ply;
         int key;
         int num=0;
-        int j = MAX_SALARY;
+        int j = max_salary;
         for (int i = player_num; i > 0; i--) {
 
             if (dp[i][j][a][b][c][d][e] != dp[i - 1][j][a][b][c][d][e])
             {
             	num++;
-                int salary = stoi(ori_data[i][2]) / 100;
+                int salary = stoi(ori_data[i][2]);
+                if(!is_tt)  salary/=100;
                 string pos = ori_data[i][0];
 
                 j -= salary;
@@ -245,7 +281,7 @@ int main(int argc, char *argv[])
         }
 
         cout<<"TOTAL FPPG: "<<op<<endl;
-        cout<<"TOTAL SALARY: "<<(500-j)*100<<endl<<endl;
+        cout<<"TOTAL SALARY: "<<(is_tt? (max_salary-j) : (max_salary-j)*100)<<endl<<endl;
 
         if(ply.size()==8)
         {

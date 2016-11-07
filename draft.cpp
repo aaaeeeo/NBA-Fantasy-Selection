@@ -39,14 +39,18 @@ int main(int argc, char *argv[])
 	string line;
     string word;
     bool is_tt = false;
-    int max_salary;
+    int max_salary = 0;
+
+    int needs[8] = {1,1,1,1,1,1,1,1};
 
     if(argc>1) 
     {
         int val = atoi(argv[1]);
         if(val>0 && val<=MAX_SALARY) {
             max_salary = val;
-            fprintf(stderr, "\033[32mSet max salary to %d.\033[0m\n", max_salary);
+        }
+        for(int i=2; i<argc; i++) {
+            needs[i-2] = atoi(argv[i]);
         }
     }
 
@@ -100,11 +104,12 @@ int main(int argc, char *argv[])
     }
 
     int player_num = i-1;
-    max_salary = (is_tt ? MAX_SALARY_TT : MAX_SALARY);
+    if(max_salary==0)
+        max_salary = (is_tt ? MAX_SALARY_TT : MAX_SALARY);
     int max_pos_num = 3;
 
     fprintf(stderr, "\033[32mDONE: %d players read.\033[0m\n\n", player_num);
-    fprintf(stderr, "\033[32mSet max salary to %d.\033[0m\n", max_salary);
+    fprintf(stderr, "\033[32mMax salary set to %d.\033[0m\n", max_salary);
     //cerr<<"DONE: "<<player_num<<" players read."<<endl<<endl;
     fprintf(stderr,"\033[?25l\033[34m\033[47mComputing the optimal selection ...\033[0m\n\033[31m0%%\033[0m\n");
 
@@ -195,40 +200,40 @@ int main(int argc, char *argv[])
 
     map<double, int> res;
 
-    int count=0;
     for(int i=0; i<2; i++)
         for(int j=0; j<2; j++)
             for(int k=1; k<=5; k++)
             {
-                int a = 1 + (i==0) + (k==1);
-                int b = 1 + (i==1) + (k==2);
-                int c = 1 + (j==0) + (k==3);
-                int d = 1 + (j==1) + (k==4);
-                int e = 1 + (k==5);
+                if(needs[5]==0) 
+                    i=-1;
+                if(needs[6]==0) 
+                    j=-1;
+                if(needs[7]==0) 
+                    k=-1;
+                int a = needs[0] + (i==0) + (k==1);
+                int b = needs[1] + (i==1) + (k==2);
+                int c = needs[2] + (j==0) + (k==3);
+                int d = needs[3] + (j==1) + (k==4);
+                int e = needs[4] + (k==5);
 
                 double subop = dp[player_num][max_salary][a][b][c][d][e];
-                res[subop]=count;
+                res[subop] = a*10000+b*1000+c*100+d*10+e;
                 //cerr<<count<<" : "<<a<<b<<c<<d<<e<<" : "<<subop<<endl;
-                count++;
             }
 
     fprintf(stderr, "\033[32mDONE.\033[0m");
     fprintf(stderr,"\n\n\033[34m\033[47mOutputing results to stdout ...\033[0m\n\33[?25h");
-    count=0;
+    int count=0;
     for(auto it= res.rbegin(); it!=res.rend(); it++)
     {
         int type = (*it).second;
         double op = (*it).first;
 
-        int x = type / 10;
-        int y = (type % 10) / 5;
-        int z = type % 5 + 1;
-
-        int a = 1 + (x == 0) + (z == 1);
-        int b = 1 + (x == 1) + (z == 2);
-        int c = 1 + (y == 0) + (z == 3);
-        int d = 1 + (y == 1) + (z == 4);
-        int e = 1 + (z == 5);
+        int e = type%10; type/=10;
+        int d = type%10; type/=10;
+        int c = type%10; type/=10;
+        int b = type%10; type/=10;
+        int a = type%10; type/=10;
 
         count++;
         cout<<"-------------------------------------------------------------------------------"<<endl;
@@ -283,7 +288,7 @@ int main(int argc, char *argv[])
         cout<<"TOTAL FPPG: "<<op<<endl;
         cout<<"TOTAL SALARY: "<<(is_tt? (max_salary-j) : (max_salary-j)*100)<<endl<<endl;
 
-        if(ply.size()==8)
+        if(ply.size()<=8)
         {
             for(auto it=ply.begin(); it!=ply.end(); it++)
             {

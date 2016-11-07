@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
     bool is_tt = false;
     int max_salary = 0;
 
-    int needs[8] = {1,1,1,1,1,1,1,1};
+    int has[5] = {0,0,0,0,0};
 
     if(argc>1) 
     {
@@ -50,7 +50,7 @@ int main(int argc, char *argv[])
             max_salary = val;
         }
         for(int i=2; i<argc; i++) {
-            needs[i-2] = atoi(argv[i]);
+            has[i-2] = atoi(argv[i]);
         }
     }
 
@@ -204,17 +204,13 @@ int main(int argc, char *argv[])
         for(int j=0; j<2; j++)
             for(int k=1; k<=5; k++)
             {
-                if(needs[5]==0) 
-                    i=-1;
-                if(needs[6]==0) 
-                    j=-1;
-                if(needs[7]==0) 
-                    k=-1;
-                int a = needs[0] + (i==0) + (k==1);
-                int b = needs[1] + (i==1) + (k==2);
-                int c = needs[2] + (j==0) + (k==3);
-                int d = needs[3] + (j==1) + (k==4);
-                int e = needs[4] + (k==5);
+                int a = 1 - has[0] + (i==0) + (k==1);
+                int b = 1 - has[1] + (i==1) + (k==2);
+                int c = 1 - has[2] + (j==0) + (k==3);
+                int d = 1 - has[3] + (j==1) + (k==4);
+                int e = 1 - has[4] + (k==5);
+                if(a<0||b<0||c<0||d<0||e<0)
+                    continue;
 
                 double subop = dp[player_num][max_salary][a][b][c][d][e];
                 res[subop] = a*10000+b*1000+c*100+d*10+e;

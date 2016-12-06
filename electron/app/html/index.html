@@ -72,7 +72,7 @@
 				    	<ui-select-match placeholder="选择固定球员...">
 				    		{{$item.player}}
 				    	</ui-select-match>
-				        <ui-select-choices  group-by="'positionEn'" repeat ="player in allPlayer | propsFilter: {player: $select.search, nameEn: $select.search, team: $select.search}" value="{{player}}">
+				        <ui-select-choices  group-by="'positionEn'" repeat ="player in allPlayer | propsFilter: {player: $select.search, nameEn: $select.search, positionEn: $select.search, team: $select.search}" value="{{player}}">
 				        <div ng-bind-html="player.player | highlight: $select.search"></div>
 					      <small>
 					    	球队: {{player.team}}

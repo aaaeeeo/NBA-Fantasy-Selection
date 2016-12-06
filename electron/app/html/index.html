@@ -1,0 +1,78 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>sys</title>
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<script src="http://cdn.bootcss.com/angular.js/1.6.0-rc.0/angular.js"></script>
+	<script src="../js/combox.js"></script>
+</head>
+<body ng-app="myApp">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+	<script src="../js/select2.min.js"></script>
+
+	<div ng-controller="ResultCtrl" class='container'>
+		<div class='col1 head'>
+			<div id="room" class="select">
+			    <select data-ng-model="roomModel" ng-change="changedValue('room',roomModel)" style="width: 100%;">
+			        <option ng-repeat ="room in room"  value="{{room.id}}">{{room.id}}-{{room.name}}</option>
+			    </select>
+		    </div>
+		    <div class='col1'>
+		 		<div id="player"  class="select">
+			    	{{playerHave}}
+				   	<select data-ng-model="playerSelectModel" ng-change="addSelectedPlayer('playerSelectedYes',playerSelectModel)" multiple>
+				        <option ng-repeat =" player in allPlayer"  value="{{player.id}}">{{player.player}}</option>
+				    </select>
+			    </div>
+			    <label>已选择球员:
+			    	<a ng-repeat =" playerx in player.playerSelectedYes">{{playerx.player}},</a>
+			    </label>
+			</div>
+			<div class='col2'>
+			    <div id="player"  class="select">
+			    	{{playerNotHave}}
+				   	<select data-ng-model="playerSelectNotModel" ng-change="addSelectedPlayer('playerSelectedNo',playerSelectNotModel)" multiple>
+				        <option ng-repeat =" player in allPlayer"  value="{{player.id}}">{{player.player}}</option>
+				    </select>
+			    </div>
+			    <label>已去掉球员:
+					<a ng-repeat =" playerx in player.playerSelectedNo">{{playerx.player}},</a>
+			    </label>
+			</div>
+		    <div>
+				<button ng-click="search()">search</button>
+			</div>
+		</div>
+
+		
+
+		<div class='content' >
+			<table id='tbs' ng-table="tableParams">
+				<tr>
+					<th>ID</th>
+					<th>PLAYER</th>
+					<th>POINT</th>
+					<th>salary</th>
+					<th>lastTen</th>
+					<th>position</th>
+					<th>timeAvg</th>
+					<th>xjb</th>
+				</tr>
+				<tr ng-repeat="person in people">
+	                <td>{{person.id}}</td>
+	                <td>{{person.player}}</td>
+	                <td>{{person.point}}</td>
+	                <td>{{person.salary}}</td>
+	                <td>{{person.lastTen}}</td>
+	                <td >{{person.positionEn}}</td>
+	               <!--  <td>{{playerPostion[parseInt({{person.position}})-1]}}</td> -->
+	                <td>{{person.timeAvg}}</td>
+	                <td>{{person.xjb}}</td>
+	                
+            	</tr>
+			</table>
+		</div>
+	</div>
+</body>
+	<script type="text/javascript" src="../js/index.js"></script>
+</html>

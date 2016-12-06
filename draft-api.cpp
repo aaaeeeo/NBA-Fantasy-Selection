@@ -25,11 +25,11 @@ int err_input()
     return 1;
 }
 
-int draft(int a_sal, int a_pg, int a_sg, int a_sf, int a_pf, int a_c, string data);
+int draft(int a_sal, int* has, string data);
 
 int main(int argc, char *argv[]) {
 
-    int has[5] = {0,0,0,0,0};
+    int has[8] = {1,1,1,1,1,1,1,1};
     int max_salary = 0;
     if(argc>1) 
     {
@@ -48,11 +48,11 @@ int main(int argc, char *argv[]) {
         data += str;
         data += "\n";
     }
-    draft(max_salary, has[0], has[1], has[2], has[3], has[4], data);
+    draft(max_salary, has, data);
 }
 
 
-int draft(int a_sal, int a_pg, int a_sg, int a_sf, int a_pf, int a_c, string data)
+int draft(int a_sal, int* has, string data)
 {
 
     fprintf(stderr,"\033[2J\033[35m \
@@ -68,8 +68,9 @@ int draft(int a_sal, int a_pg, int a_sg, int a_sf, int a_pf, int a_c, string dat
     bool is_tt = false;
     int max_salary = a_sal;
 
-    int has[5] = {a_pg,a_sg,a_sf,a_pf,a_c};
-    int player_need = 8-a_pg-a_sg-a_sf-a_pf-a_c;
+    int player_need = 0;
+    for(int i=0; i<8; i++)
+        player_need += has[i];
     istringstream cin;
     cin.str(data);
 
@@ -96,7 +97,7 @@ int draft(int a_sal, int a_pg, int a_sg, int a_sf, int a_pf, int a_c, string dat
             ori_data[i][4]=d["point"].GetString();
             ori_data[i][5]=d["team"].GetString();
             ori_data[i][6]=d["id"].GetString();
-            //cerr<<ori_data[i][0]<<" "<<ori_data[i][1]<<" "<<ori_data[i][2]<<" "<<ori_data[i][4]<<" "<<ori_data[i][5]<<endl;
+            cerr<<ori_data[i][0]<<" "<<ori_data[i][1]<<" "<<ori_data[i][2]<<" "<<ori_data[i][4]<<" "<<ori_data[i][5]<<endl;
         } 
         else 
         {
@@ -219,15 +220,15 @@ int draft(int a_sal, int a_pg, int a_sg, int a_sf, int a_pf, int a_c, string dat
 
     map<double, int> res;
 
-    for(int i=0; i<2; i++)
-        for(int j=0; j<2; j++)
-            for(int k=1; k<=5; k++)
+    for(int i=0; i<(has[5]==1?2:1); i++)
+        for(int j=0; j<(has[6]==1?2:1); j++)
+            for(int k=1; k<=(has[7]==1?5:1); k++)
             {
-                int a = 1 - has[0] + (i==0) + (k==1);
-                int b = 1 - has[1] + (i==1) + (k==2);
-                int c = 1 - has[2] + (j==0) + (k==3);
-                int d = 1 - has[3] + (j==1) + (k==4);
-                int e = 1 - has[4] + (k==5);
+                int a = has[0] + (i==0 && has[5]==1) + (k==1 && has[7]==1);
+                int b = has[1] + (i==1 && has[5]==1) + (k==2 && has[7]==1);
+                int c = has[2] + (j==0 && has[6]==1) + (k==3 && has[7]==1);
+                int d = has[3] + (j==1 && has[6]==1) + (k==4 && has[7]==1);
+                int e = has[4] + (k==5 && has[7]==1);
                 if(a<0||b<0||c<0||d<0||e<0)
                     continue;
 

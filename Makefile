@@ -1,8 +1,14 @@
-final: draft DKSalaries.csv
-	@./draft <DKSalaries.csv
+deploy: draft-api 
+	@cp draft-api electron/app/lib
 
-draft: draft.cpp
-	g++ draft.cpp -o draft -std=c++11
+draft-api: draft-api.cpp
+	g++ draft-api.cpp -o draft-api -std=c++11
 
 clean:
-	@rm -f draft
+	@rm -f draft-api
+
+call: draft-api
+	@./draft-api 200 1 1 1 1 1 1 1 1 < result.json 2&>null
+
+run: draft-api
+	@./draft-api 200 1 1 1 1 1 1 1 1 < result.json

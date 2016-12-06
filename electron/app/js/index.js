@@ -36,7 +36,7 @@ function ResultCtrl($scope, $http) {
 	$scope.selectedArr = {
 		'playerChoose': []
 	};
-	
+	$scope.status_text = "界面初始化完成";
 	$scope.roomStr = "选择房间号：";
 	$scope.playerHave = "选择固定球员";
 	$scope.playerNotHave= "选择删除球员";
@@ -73,6 +73,7 @@ function ResultCtrl($scope, $http) {
 	}
 
 	$scope.getUserToken = function() {
+		$scope.status_text = "获取User Token中...";
 		var httpRequest = $http({
 			method: 'POST',
 			url: 'http://ttnba.nbahero.com/platform/login',
@@ -95,6 +96,7 @@ function ResultCtrl($scope, $http) {
 	}
 
 	$scope.getTeamUserToken = function(user_token) {
+		$scope.status_text = "获取Team User Token中...";
 		var httpRequest = $http({
 			method: 'POST',
 			url: 'http://ttnba.nbahero.com/platform/getUserInfo',
@@ -118,6 +120,7 @@ function ResultCtrl($scope, $http) {
 	}
 
 	$scope.selectRoom = function(team_user_token) {
+		$scope.status_text = "获取房间列表中...";
 		var httpRequest = $http({
 			method: 'GET',
 			url: 'http://ttnba.nbahero.com/room/publicRoomList',
@@ -137,18 +140,17 @@ function ResultCtrl($scope, $http) {
 			console.log($scope.room.length);
 			console.log($scope.room);
 			$scope.selectedArr['room'] = $scope.room[0].id;
+			$scope.status_text = "完成";
 			//$('select').select2();
 		});
 	}
 
 	$scope.selectPlayer = function(room,cb) {
 		console.log('room', room.id);
+		$scope.status_text = "获取球员列表中...";
 		$scope.num_type = parseInt(room.num_type)
 		allMember(room.id, $scope.team_user_token, function(re) {
 			console.log(re);
-			$scope.$apply(function() {
-				$scope.allPlayer = re;
-			});
 			//console.log(re);
 			var reArr = [
 				[], $scope.allPlayerP1, $scope.allPlayerP2, $scope.allPlayerP3, $scope.allPlayerP4, $scope.allPlayerP5
@@ -158,6 +160,10 @@ function ResultCtrl($scope, $http) {
 			}
 			reArr.shift();
 			$scope.allPlayerWithPosition = reArr;
+			$scope.$apply(function() {
+				$scope.allPlayer = re;
+				$scope.status_text = "完成";
+			});
 			cb();
 			//console.log(reArr);
 		});
@@ -184,7 +190,7 @@ function ResultCtrl($scope, $http) {
 
 
 	$scope.getResult = function() {
-		
+		$scope.status_text = "计算选择方案中...";
 		var resStr = '';
 		//console.log($scope.player.playerSelectedNoIdArr);
 		var allSalary = 0;
@@ -248,6 +254,7 @@ function ResultCtrl($scope, $http) {
 
 			$scope.$apply(function() {
 				$scope.people = $scope.people;
+				$scope.status_text = "完成";
 			});
 			//console.log('$scope.people', $scope.people);
 			return;

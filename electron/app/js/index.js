@@ -43,8 +43,7 @@ function ResultCtrl($scope, $http) {
 	$scope.playerPostion = ['PG', 'SG', 'SF', 'PF', 'C'];
 
 	$scope.reset = function() {
-		$scope.allSalary = 200;
-		$scope.positionArr = [0,0,0,0,0];
+		$scope.num_type = 0;
 		$scope.people = [];
 		$scope.allPlayer = [];
 		$scope.allPlayerP = [];
@@ -143,8 +142,9 @@ function ResultCtrl($scope, $http) {
 	}
 
 	$scope.selectPlayer = function(room,cb) {
-		console.log('room', room);
-		allMember(room, $scope.team_user_token, function(re) {
+		console.log('room', room.id);
+		$scope.num_type = parseInt(room.num_type)
+		allMember(room.id, $scope.team_user_token, function(re) {
 			console.log(re);
 			$scope.$apply(function() {
 				$scope.allPlayer = re;
@@ -166,7 +166,7 @@ function ResultCtrl($scope, $http) {
 	$scope.changedValue = function(type, value) {
 		//console.log('111', type, value);
 		$scope.reset();
-		$scope.selectedArr[type] = value;
+		$scope.selectedArr[type] = JSON.parse(value);
 		if (type == 'playerChoose') {
 			$scope.selectedArr[type].push(value);
 		}
@@ -184,9 +184,20 @@ function ResultCtrl($scope, $http) {
 
 
 	$scope.getResult = function() {
+		
 		var resStr = '';
-		console.log($scope.player.playerSelectedNoIdArr);
-		$scope.allSalary = 200;
+		//console.log($scope.player.playerSelectedNoIdArr);
+		var allSalary = 0;
+		var positionArr = [];
+		$scope.people = [];
+		if($scope.num_type==1) {
+			allSalary = 125;
+			positionArr = [1,1,1,1,1,0,0,0];
+		}
+		else {
+			allSalary = 200;
+			positionArr = [1,1,1,1,1,1,1,1];
+		}
 		for (var p in $scope.allPlayer) {
 			// console.log($scope.allPlayer[p]);
 			if ($scope.player.playerSelectedNoIdArr.indexOf($scope.allPlayer[p].id) >= 0) {
@@ -194,8 +205,24 @@ function ResultCtrl($scope, $http) {
 				continue;
 			}
 			if ($scope.player.playerSelectedYesIdArr.indexOf($scope.allPlayer[p].id) >= 0) {
-				$scope.allSalary -= $scope.allPlayer[p].salary;
-				$scope.positionArr[parseInt($scope.allPlayer[p].position)-1]++;
+				var picked = $scope.allPlayer[p];
+				picked.positionEn = $scope.playerPostion[parseInt(picked.position) - 1];
+				allSalary -= picked.salary;
+				var pos = parseInt(picked.position)-1;
+				var sup_pos = (pos == 0 || pos == 1 ? 5 : pos == 2 || pos == 3 ? 6 : -1);
+				//console.log(pos+" "+sup_pos);
+				if (positionArr[pos] > 0) {
+					positionArr[pos]--;
+					$scope.people.push(picked);
+				}
+				else if (sup_pos != -1 && positionArr[sup_pos] > 0) {
+					positionArr[sup_pos]--;
+					$scope.people.push(picked);
+				}
+				else if (positionArr[7] > 0) {
+					positionArr[7]--;
+					$scope.people.push(picked);
+				}
 				continue;
 			}
 
@@ -204,8 +231,7 @@ function ResultCtrl($scope, $http) {
 		}
 		//console.log('resStr::', resStr);
 		//$scope.people = [];
-		calu.calu(resStr,$scope.allSalary,$scope.positionArr[0],$scope.positionArr[1],$scope.positionArr[2],$scope.positionArr[3],$scope.positionArr[4], function(re) {
-			$scope.people = [];
+		calu.calu(allSalary, positionArr, resStr, function(re) {
 			var reArr = re.split(',');
 			//console.log(reArr);
 			for (var i in reArr) {
@@ -222,7 +248,6 @@ function ResultCtrl($scope, $http) {
 
 			$scope.$apply(function() {
 				$scope.people = $scope.people;
-				$scope.allSalary = 200;
 			});
 			//console.log('$scope.people', $scope.people);
 			return;

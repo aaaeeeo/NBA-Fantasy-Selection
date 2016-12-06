@@ -14,7 +14,9 @@
 		<div class='col1 head'>
 			<div id="room" class="select">
 			    <select data-ng-model="roomModel" ng-change="changedValue('room',roomModel)" style="width: 100%;">
-			        <option ng-repeat ="room in room"  value="{{room.id}}">{{room.id}}-{{room.name}}</option>
+			        <option ng-repeat ="room in room"  value="{{room}}">
+			        	{{room.id}} - {{(room.num_type==1?"五人":"八人")}}-{{room.name}}
+			        </option>
 			    </select>
 		    </div>
 		    <div class='col1'>
@@ -50,21 +52,21 @@
 			<table id='tbs' ng-table="tableParams">
 				<tr>
 					<th>ID</th>
+					<th>position</th>
 					<th>PLAYER</th>
 					<th>POINT</th>
 					<th>salary</th>
 					<th>lastTen</th>
-					<th>position</th>
 					<th>timeAvg</th>
 					<th>xjb</th>
 				</tr>
 				<tr ng-repeat="person in people">
 	                <td>{{person.id}}</td>
+	                <td>{{person.positionEn}}</td>
 	                <td>{{person.player}}</td>
 	                <td>{{person.point}}</td>
 	                <td>{{person.salary}}</td>
-	                <td>{{person.lastTen}}</td>
-	                <td >{{person.positionEn}}</td>
+	                <td>{{person.lastTen.toString()}}</td>
 	               <!--  <td>{{playerPostion[parseInt({{person.position}})-1]}}</td> -->
 	                <td>{{person.timeAvg}}</td>
 	                <td>{{person.xjb}}</td>

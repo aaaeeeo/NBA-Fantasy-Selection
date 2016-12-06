@@ -49,9 +49,11 @@ var dir = require('path').basename(__dirname);
 const exec = require('child_process').exec;
 
 // < $(fileStr)
-function getData(numSalary, num1, num2, num3, num4, num5, fileStr,cb) {
-	console.log(numSalary, num1, num2, num3, num4, num5);
-	var execArg = __dirname + '/draft-api ' + numSalary +' '+ num1 + ' '+ num2 + ' '+ num3 + ' ' + num4+ ' '+ num5 ; 	
+function getData(numSalary, posArr, fileStr, cb) {
+	var execArg = __dirname + '/draft-api ' + numSalary; 
+	for(i in posArr)
+		execArg += " " + posArr[i];
+	console.log(execArg);
 	//console.log('sss',`/Users/fanbaolin/Documents/git/electron-quick-start/app/lib/draft-api $(numSalary) $(num1) $(num2) $(num3) $(num4) $(num5)`);
 	//`/Users/fanbaolin/Documents/git/electron-quick-start/app/lib/draft-api $(numSalary) $(num1) $(num2) $(num3) $(num4) $(num5)`
 	var child = exec(execArg, (error, stdout, stderr) => {
@@ -66,19 +68,19 @@ function getData(numSalary, num1, num2, num3, num4, num5, fileStr,cb) {
 	child.stdin.end(); 
 }
 
-function readFile(strIn,salary,num1,num2,num3,num4,num5,cb){
-	console.log('filePath',salary,num1,num2,num3,num4,num5);
-	// fs.readFile('/Users/fanbaolin/Documents/git/electron-quick-start/app/lib/re.json', 'utf8', function(err, allMember) {
-	// 	if(err){
-	// 		console.log(err);
-	// 	}
-	// 	//console.log(allMember.length);	
-	// 	getData(200, 0, 0, 0, 0, 0,allMember,cb);
-	// })
-	// console.log(strin)
-	getData(salary,num1,num2,num3,num4,num5,strIn,cb);
+// function readFile(strIn,salary,num1,num2,num3,num4,num5,cb){
+// 	console.log('filePath',salary,num1,num2,num3,num4,num5);
+// 	// fs.readFile('/Users/fanbaolin/Documents/git/electron-quick-start/app/lib/re.json', 'utf8', function(err, allMember) {
+// 	// 	if(err){
+// 	// 		console.log(err);
+// 	// 	}
+// 	// 	//console.log(allMember.length);	
+// 	// 	getData(200, 0, 0, 0, 0, 0,allMember,cb);
+// 	// })
+// 	// console.log(strin)
+// 	getData(salary,num1,num2,num3,num4,num5,strIn,cb);
 	
-}
+// }
 
-exports.calu = readFile;
+exports.calu = getData;
 

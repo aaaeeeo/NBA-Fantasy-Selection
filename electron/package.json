@@ -21,6 +21,7 @@
     "electron-packager": "^8.3.0"
   },
   "dependencies": {
-    "jquery": "^3.1.1"
+    "jquery": "^3.1.1",
+    "ui-select": "^0.19.6"
   }
 }

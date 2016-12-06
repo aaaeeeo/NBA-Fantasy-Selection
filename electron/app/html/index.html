@@ -3,22 +3,37 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>sys</title>
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
-	<script src="http://cdn.bootcss.com/angular.js/1.6.0-rc.0/angular.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/select.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-sanitize.js"></script>
 	<script src="../js/combox.js"></script>
+	<script src="../js/select.js"></script>
+
+	<!-- <script src="../js/select2.min.js"></script> -->
+	<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/3.4.5/select2.css">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.8.5/css/selectize.default.css">
 </head>
 <body ng-app="myApp">
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
-	<script src="../js/select2.min.js"></script>
 
 	<div ng-controller="ResultCtrl" class='container'>
 		<div><h2 id="status">{{status_text}}</h2></div>
 		<div class='col1 head'>
 			<div id="room" class="select">
-			    <select data-ng-model="roomModel" ng-change="changedValue('room',roomModel)" style="width: 100%;">
-			        <option ng-repeat ="room in room"  value="{{room}}">
-			        	{{room.id}} - {{(room.num_type==1?"五人":"八人")}}-{{room.name}}
-			        </option>
-			    </select>
+			    <ui-select data-ng-model="roomModel" theme="select2" ng-change="changedValue('room',roomModel)" style="width: 100%;">
+			    	<ui-select-match placeholder="选择一个房间或搜索...">
+			    		{{$select.selected.id+' - '+$select.selected.num_type_text+'-'+$select.selected.name || $select.selected}}
+			    	</ui-select-match>
+			        <ui-select-choices group-by="'num_type_text'" repeat ="room in room | propsFilter: {name: $select.search, num_type_text: $select.search}"  value="{{room}}">
+			        <div ng-bind-html="room.name | highlight: $select.search""></div>
+				      <small>
+				        ID: {{room.id}}
+				        价格: {{room.ticket_num}}
+				        人数: {{room.num+'/'+room.max_num}}
+				      </small>
+			        	<!-- {{room.id}} - {{(room.num_type==1?"五人":"八人")}}-{{room.name}} -->
+			        </ui-select-choices>
+			    </ui-select>
 		    </div>
 		    <div class='col1'>
 		 		<div id="player"  class="select">

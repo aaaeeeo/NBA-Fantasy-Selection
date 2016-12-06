@@ -1,4 +1,4 @@
-window.$ = window.jQuery = require('jquery');
+//window.$ = window.jQuery = require('jquery');
 var allMember = require('../lib/index').getData;
 var calu = require('../lib/subprocess');
 // allMember(function(re) {
@@ -23,8 +23,39 @@ var calu = require('../lib/subprocess');
 
 // 	})
 // }
-angular.module('myModule', ['ui.select', 'ngSanitize']);
-var app = angular.module('myApp', []);
+var app = angular.module('myApp', ['ngSanitize', 'ui.select']);
+
+app.filter('propsFilter', function() {
+  return function(items, props) {
+    var out = [];
+
+    if (angular.isArray(items)) {
+      var keys = Object.keys(props);
+
+      items.forEach(function(item) {
+        var itemMatches = false;
+
+        for (var i = 0; i < keys.length; i++) {
+          var prop = keys[i];
+          var text = props[prop].toLowerCase();
+          if (item[prop].toString().toLowerCase().indexOf(text) !== -1) {
+            itemMatches = true;
+            break;
+          }
+        }
+
+        if (itemMatches) {
+          out.push(item);
+        }
+      });
+    } else {
+      // Let the output be the input untouched
+      out = items;
+    }
+
+    return out;
+  };
+});
 
 app.controller('ResultCtrl', ResultCtrl);
 app.controller('SelectCtrl', SelectCtrl);
@@ -137,6 +168,9 @@ function ResultCtrl($scope, $http) {
 			if(!('result' in response.data))
 				alert(response.status+" "+response.statusText+"\n"+response.data.message);
 			$scope.room = response.data.result.list;
+			for(i in $scope.room) {
+				$scope.room[i].num_type_text = ($scope.room[i].num_type==1?"五人":"八人")
+			}
 			console.log($scope.room.length);
 			console.log($scope.room);
 			$scope.selectedArr['room'] = $scope.room[0].id;
@@ -170,9 +204,9 @@ function ResultCtrl($scope, $http) {
 	}
 
 	$scope.changedValue = function(type, value) {
-		//console.log('111', type, value);
+		console.log(type, value);
 		$scope.reset();
-		$scope.selectedArr[type] = JSON.parse(value);
+		$scope.selectedArr[type] = value;
 		if (type == 'playerChoose') {
 			$scope.selectedArr[type].push(value);
 		}

@@ -25,7 +25,7 @@
 			    		{{$select.selected.id+' - '+$select.selected.num_type_text+'-'+$select.selected.name || $select.selected}}
 			    	</ui-select-match>
 			        <ui-select-choices group-by="'num_type_text'" repeat ="room in room | propsFilter: {name: $select.search, num_type_text: $select.search}"  value="{{room}}">
-			        <div ng-bind-html="room.name | highlight: $select.search""></div>
+			        <div ng-bind-html="room.name | highlight: $select.search"></div>
 				      <small>
 				        ID: {{room.id}}
 				        价格: {{room.ticket_num}}
@@ -36,26 +36,56 @@
 			    </ui-select>
 		    </div>
 		    <div class='col1'>
-		 		<div id="player"  class="select">
-			    	{{playerHave}}
+		 		<!-- <div id="player"  class="select">
+			    	{{playerHave}}:
 				   	<select data-ng-model="playerSelectModel" ng-change="addSelectedPlayer('playerSelectedYes',playerSelectModel)" multiple>
 				        <option ng-repeat =" player in allPlayer"  value="{{player.id}}">{{player.player}}</option>
 				    </select>
 			    </div>
 			    <label>已选择球员:
 			    	<a ng-repeat =" playerx in player.playerSelectedYes">{{playerx.player}},</a>
-			    </label>
+			    </label> -->
+
+				<ui-select multiple close-on-select="false" data-ng-model="playerSelectModel" theme="select2" ng-change="addSelectedPlayer('playerSelectedYes',playerSelectModel)" style="width: 100%;">
+			    	<ui-select-match placeholder="选择固定球员...">
+			    		{{$item.player}}
+			    	</ui-select-match>
+			        <ui-select-choices  group-by="'positionEn'" repeat =" player in allPlayer | propsFilter: {player: $select.search, nameEn: $select.search, team: $select.search}"  value="{{player}}">
+			        <div ng-bind-html="player.player | highlight: $select.search"></div>
+				      <small>
+				      	球队: {{player.team}}
+				      	<label ng-switch="player.status">
+					      		<label ng-switch-when="0" style="color:#7FFFD4" >{{player.statusCn}}</label>
+					      		<label ng-switch-when="1" style="color:#FF8C00" >{{player.statusCn}}</label>
+					      		<label ng-switch-when="2" style="color:#FF4500" >{{player.statusCn}}</label>
+					    </label>
+				        薪资: {{player.salary}}
+				      </small>
+			        	<!-- {{room.id}} - {{(room.num_type==1?"五人":"八人")}}-{{room.name}} -->
+			        </ui-select-choices>
+			    </ui-select>
+
 			</div>
-			<div class='col2'>
+			<div class='col2'>	
 			    <div id="player"  class="select">
-			    	{{playerNotHave}}
-				   	<select data-ng-model="playerSelectNotModel" ng-change="addSelectedPlayer('playerSelectedNo',playerSelectNotModel)" multiple>
-				        <option ng-repeat =" player in allPlayer"  value="{{player.id}}">{{player.player}}</option>
-				    </select>
-			    </div>
-			    <label>已去掉球员:
-					<a ng-repeat =" playerx in player.playerSelectedNo">{{playerx.player}},</a>
-			    </label>
+				    <ui-select multiple close-on-select="false" data-ng-model="playerSelectModel" theme="select2" ng-change="addSelectedPlayer('playerSelectedNo',playerSelectModel)" style="width: 100%;">
+				    	<ui-select-match placeholder="选择固定球员...">
+				    		{{$item.player}}
+				    	</ui-select-match>
+				        <ui-select-choices  group-by="'positionEn'" repeat ="player in allPlayer | propsFilter: {player: $select.search, nameEn: $select.search, team: $select.search}" value="{{player}}">
+				        <div ng-bind-html="player.player | highlight: $select.search"></div>
+					      <small>
+					    	球队: {{player.team}}
+					    	<label ng-switch="player.status">
+					      		<label ng-switch-when="0" style="color:#7FFFD4" >{{player.statusCn}}</label>
+					      		<label ng-switch-when="1" style="color:#FF8C00" >{{player.statusCn}}</label>
+					      		<label ng-switch-when="2" style="color:#FF4500" >{{player.statusCn}}</label>
+					      	</label>
+				        	薪资: {{player.salary}}
+					      </small>
+				        </ui-select-choices>
+				    </ui-select>
+				</div>
 			</div>
 		    <div>
 				<button ng-click="search()">search</button>

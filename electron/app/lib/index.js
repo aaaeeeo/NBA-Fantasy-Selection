@@ -68,7 +68,9 @@ function match(allMember, matchMember, team, cb) {
 			lastTen: matchMember[member].last_ten_scores,
 			xjb: (matchMember[member].score / matchMember[member].salary).toFixed(3),
 			timeAvg: matchMember[member].court_time_avg,
-			position: matchMember[member].position
+			position: matchMember[member].position,
+			nameEn: allMember[matchMember[member].id].e_name,
+			status: matchMember[member].state
 		};
 		result.push(player);
 		// console.log(

@@ -72,6 +72,7 @@ function ResultCtrl($scope, $http) {
 	$scope.playerHave = "选择固定球员";
 	$scope.playerNotHave= "选择删除球员";
 	$scope.playerPostion = ['PG', 'SG', 'SF', 'PF', 'C'];
+	$scope.playerStatusMap = ['正常','待定','伤病'];
 
 	$scope.reset = function() {
 		$scope.num_type = 0;
@@ -93,11 +94,12 @@ function ResultCtrl($scope, $http) {
 	}
 
 	$scope.addSelectedPlayer = function(type,model) {
+		console.log('type,model',type,model);
 		$scope.player[type] = [];
-		$scope.player[type+'IdArr'] = model;
+		$scope.player[type] = model;
+		$scope.player[type+'IdArr'] = [];
 		for(var i in model){
-			var picked = $scope.allPlayer.find(o => o.id === model[i]);
-			$scope.player[type].push(picked);	
+			$scope.player[type+'IdArr'].push(model[i].id);	
 		}
 		console.log($scope.player[type]);
 
@@ -184,13 +186,15 @@ function ResultCtrl($scope, $http) {
 		$scope.status_text = "获取球员列表中...";
 		$scope.num_type = parseInt(room.num_type)
 		allMember(room.id, $scope.team_user_token, function(re) {
-			console.log(re);
+			console.log('selectPlayer',re);
 			//console.log(re);
 			var reArr = [
 				[], $scope.allPlayerP1, $scope.allPlayerP2, $scope.allPlayerP3, $scope.allPlayerP4, $scope.allPlayerP5
 			];
 			for (var i in re) {
 				reArr[parseInt(re[i].position)].push(re[i]);
+				re[i].positionEn =  $scope.playerPostion [parseInt(re[i].position) - 1];
+				re[i].statusCn = $scope.playerStatusMap[parseInt(re[i].status)];
 			}
 			reArr.shift();
 			$scope.allPlayerWithPosition = reArr;
@@ -271,6 +275,7 @@ function ResultCtrl($scope, $http) {
 		}
 		//console.log('resStr::', resStr);
 		//$scope.people = [];
+		console.log('positionArr',positionArr);
 		calu.calu(allSalary, positionArr, resStr, function(re) {
 			var reArr = re.split(',');
 			//console.log(reArr);

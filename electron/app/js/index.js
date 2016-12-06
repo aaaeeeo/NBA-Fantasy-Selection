@@ -65,6 +65,7 @@ app.controller('SelectCtrl', SelectCtrl);
 //$('select').select2();
 
 function ResultCtrl($scope, $http) {
+	var vm = this;
 	$scope.room = [];
 	$scope.selectedArr = {
 		'playerChoose': []
@@ -79,6 +80,7 @@ function ResultCtrl($scope, $http) {
 	var passphrase = "DK9S9SDZHZMKFPMM";
 
 	$scope.reset = function() {
+		
 		$scope.num_type = 0;
 		$scope.people = [];
 		$scope.allPlayer = [];
@@ -89,25 +91,22 @@ function ResultCtrl($scope, $http) {
 		$scope.allPlayerP4 = [];
 		$scope.allPlayerP5 = [];
 		$scope.allPlayerWithPosition = [];
-		$scope.player = {
-			'playerSelectedYes' : [],
-			'playerSelectedNo' : [],
-			'playerSelectedYesIdArr' : [],
-			'playerSelectedNoIdArr' : []
-		}
+
+		vm.playerFixSelect = undefined;
+		vm.playerExceptSelect= undefined;
 	}
 
-	$scope.addSelectedPlayer = function(type,model) {
-		console.log('type,model',type,model);
-		$scope.player[type] = [];
-		$scope.player[type] = model;
-		$scope.player[type+'IdArr'] = [];
-		for(var i in model){
-			$scope.player[type+'IdArr'].push(model[i].id);	
-		}
-		console.log($scope.player[type]);
-
-	}
+	// $scope.addSelectedPlayer = function(type,model) {
+	// 	console.log('type,model',type,model);
+	// 	console.log(vm.playerFixSelect);
+	// 	$scope.player[type] = [];
+	// 	$scope.player[type] = model;
+	// 	$scope.player[type+'IdArr'] = [];
+	// 	for(var i in model){
+	// 		$scope.player[type+'IdArr'].push(model[i].id);	
+	// 	}
+	// 	console.log($scope.player[type]);
+	// }
 
 	$scope.register = function() {
 		$scope.status_text = "注册新用户中...";
@@ -216,7 +215,7 @@ function ResultCtrl($scope, $http) {
 				$scope.room[i].num_type_text = ($scope.room[i].num_type==1?"五人":"八人")
 			}
 			console.log($scope.room.length);
-			console.log($scope.room);
+			//console.log($scope.room);
 			$scope.selectedArr['room'] = $scope.room[0].id;
 			$scope.status_text = "完成";
 			//$('select').select2();
@@ -228,8 +227,7 @@ function ResultCtrl($scope, $http) {
 		$scope.status_text = "获取球员列表中...";
 		$scope.num_type = parseInt(room.num_type)
 		allMember(room.id, $scope.team_user_token, function(re) {
-			console.log('selectPlayer',re);
-			//console.log(re);
+			//console.log('selectPlayer',re);
 			var reArr = [
 				[], $scope.allPlayerP1, $scope.allPlayerP2, $scope.allPlayerP3, $scope.allPlayerP4, $scope.allPlayerP5
 			];
@@ -268,7 +266,6 @@ function ResultCtrl($scope, $http) {
 		
 	}
 
-
 	$scope.getResult = function() {
 		$scope.status_text = "计算选择方案中...";
 		var resStr = '';
@@ -284,13 +281,16 @@ function ResultCtrl($scope, $http) {
 			allSalary = 200;
 			positionArr = [1,1,1,1,1,1,1,1];
 		}
+		var playerSelectedYesIdArr = (vm.playerFixSelect || []).map(function(obj) {return obj.id} );
+		var playerSelectedNoIdArr = (vm.playerExceptSelect || []).map(function(obj) {return obj.id} );
+		console.log(playerSelectedYesIdArr, playerSelectedNoIdArr);
 		for (var p in $scope.allPlayer) {
 			// console.log($scope.allPlayer[p]);
-			if ($scope.player.playerSelectedNoIdArr.indexOf($scope.allPlayer[p].id) >= 0) {
+			if (playerSelectedNoIdArr.indexOf($scope.allPlayer[p].id) >= 0) {
 				//console.log('true', $scope.allPlayer[p]);
 				continue;
 			}
-			if ($scope.player.playerSelectedYesIdArr.indexOf($scope.allPlayer[p].id) >= 0) {
+			if (playerSelectedYesIdArr.indexOf($scope.allPlayer[p].id) >= 0) {
 				var picked = $scope.allPlayer[p];
 				// picked.positionEn = $scope.playerPostion[parseInt(picked.position) - 1];
 				allSalary -= picked.salary;
@@ -320,7 +320,7 @@ function ResultCtrl($scope, $http) {
 		console.log('positionArr',positionArr);
 		calu.calu(allSalary, positionArr, resStr, function(re) {
 			var reArr = re.split(',');
-			//console.log(reArr);
+			console.log(reArr);
 			for (var i in reArr) {
 				if (reArr[i] != '') {
 					var picked = $scope.allPlayer.find(o => o.id === reArr[i]);

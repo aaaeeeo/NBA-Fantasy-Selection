@@ -47,7 +47,7 @@ function ajax(postForm, cb) {
 
 
 function match(allMember, matchMember, team, cb) {
-	console.log(allMember, matchMember, team);
+	//console.log(allMember, matchMember, team);
 	//console.log(member);
 	// console.log('allMember', allMember['10001']);
 	// console.log('memberMatch', matchMember['10001']);

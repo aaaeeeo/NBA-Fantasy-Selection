@@ -1,18 +1,16 @@
 {
-  "name": "electron-quick-start",
+  "name": "NBA-Selection",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "description": "TianTian NBA Selection Tool",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
   },
-  "repository": "https://github.com/electron/electron-quick-start",
+  "repository": "https://github.com/aaaeeeo/NBA-Fantasy-Selection",
   "keywords": [
-    "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
+    "tiantian",
+    "NBA",
+    "Fantasy"
   ],
   "author": "GitHub",
   "license": "CC0-1.0",
@@ -22,7 +20,6 @@
   },
   "dependencies": {
     "electron-json-storage": "^2.1.0",
-    "jquery": "^3.1.1",
     "ui-select": "^0.19.6"
   }
 }

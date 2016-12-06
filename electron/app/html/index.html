@@ -1,8 +1,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>sys</title>
-	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<title>天天NBA阵容选择工具</title>
 	<link rel="stylesheet" type="text/css" href="../css/select.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-sanitize.js"></script>
@@ -11,20 +10,21 @@
 
 	<!-- <script src="../js/select2.min.js"></script> -->
 	<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/3.4.5/select2.css">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/3.5.4/select2.css">    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.8.5/css/selectize.default.css">
 </head>
 <body ng-app="myApp">
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
 
-	<div ng-controller="ResultCtrl" class='container'>
+	<div ng-controller="ResultCtrl as ctrl" class='container'>
 		<div><h2 id="status">{{status_text}}</h2></div>
-		<div class='col1 head'>
+		<div class='head'>
 			<div id="room" class="select">
-			    <ui-select data-ng-model="roomModel" theme="select2" ng-change="changedValue('room',roomModel)" style="width: 100%;">
+			    <ui-select data-ng-model="roomModel" theme="selectize" ng-change="changedValue('room',roomModel)" style="width: 100%;">
 			    	<ui-select-match placeholder="选择一个房间或搜索...">
 			    		{{$select.selected.id+' - '+$select.selected.num_type_text+'-'+$select.selected.name || $select.selected}}
 			    	</ui-select-match>
-			        <ui-select-choices group-by="'num_type_text'" repeat ="room in room | propsFilter: {name: $select.search, num_type_text: $select.search}"  value="{{room}}">
+			        <ui-select-choices group-by="'num_type_text'" repeat ="room in room | propsFilter: {name: $select.search, num_type_text: $select.search}"  value="{{room}}" position="down">
 			        <div ng-bind-html="room.name | highlight: $select.search"></div>
 				      <small>
 				        ID: {{room.id}}
@@ -46,48 +46,46 @@
 			    	<a ng-repeat =" playerx in player.playerSelectedYes">{{playerx.player}},</a>
 			    </label> -->
 
-				<ui-select multiple close-on-select="false" data-ng-model="playerSelectModel" theme="select2" ng-change="addSelectedPlayer('playerSelectedYes',playerSelectModel)" style="width: 100%;">
+				<ui-select multiple close-on-select="false" ng-model="ctrl.playerFixSelect" theme="selectize" style="width: 100%;" reset-search-input='false' remove-selected="true" appendToBody="true">
 			    	<ui-select-match placeholder="选择固定球员...">
 			    		{{$item.player}}
 			    	</ui-select-match>
-			        <ui-select-choices  group-by="'positionEn'" repeat =" player in allPlayer | propsFilter: {player: $select.search, nameEn: $select.search, team: $select.search}"  value="{{player}}">
+			        <ui-select-choices  group-by="'positionEn'" group-filter="['PG', 'SG', 'SF', 'PF', 'C']" repeat =" player in allPlayer | propsFilter: {player: $select.search, nameEn: $select.search, positionEn: $select.search, team: $select.search}"  value="{{player}}" position="down">
 			        <div ng-bind-html="player.player | highlight: $select.search"></div>
 				      <small>
-				      	球队: {{player.team}}
-				      	<label ng-switch="player.status">
-					      		<label ng-switch-when="0" style="color:#7FFFD4" >{{player.statusCn}}</label>
-					      		<label ng-switch-when="1" style="color:#FF8C00" >{{player.statusCn}}</label>
-					      		<label ng-switch-when="2" style="color:#FF4500" >{{player.statusCn}}</label>
-					    </label>
+				      	<text ng-switch="player.status">
+					      		<text ng-switch-when="0" style="color:DarkGreen" >{{player.statusCn}}</text>
+					      		<text ng-switch-when="1" style="color:#FF8C00" >{{player.statusCn}}</text>
+					      		<text ng-switch-when="2" style="color:#FF4500" >{{player.statusCn}}</text>
+					    </text>
+					    球队: {{player.team}}
 				        薪资: {{player.salary}}
 				      </small>
-			        	<!-- {{room.id}} - {{(room.num_type==1?"五人":"八人")}}-{{room.name}} -->
 			        </ui-select-choices>
 			    </ui-select>
 
 			</div>
 			<div class='col2'>	
-			    <div id="player"  class="select">
-				    <ui-select multiple close-on-select="false" data-ng-model="playerSelectModel" theme="select2" ng-change="addSelectedPlayer('playerSelectedNo',playerSelectModel)" style="width: 100%;">
-				    	<ui-select-match placeholder="选择固定球员...">
-				    		{{$item.player}}
-				    	</ui-select-match>
-				        <ui-select-choices  group-by="'positionEn'" repeat ="player in allPlayer | propsFilter: {player: $select.search, nameEn: $select.search, positionEn: $select.search, team: $select.search}" value="{{player}}">
-				        <div ng-bind-html="player.player | highlight: $select.search"></div>
-					      <small>
-					    	球队: {{player.team}}
-					    	<label ng-switch="player.status">
-					      		<label ng-switch-when="0" style="color:#7FFFD4" >{{player.statusCn}}</label>
-					      		<label ng-switch-when="1" style="color:#FF8C00" >{{player.statusCn}}</label>
-					      		<label ng-switch-when="2" style="color:#FF4500" >{{player.statusCn}}</label>
-					      	</label>
-				        	薪资: {{player.salary}}
-					      </small>
-				        </ui-select-choices>
-				    </ui-select>
-				</div>
+			    <ui-select multiple close-on-select="false" ng-model="ctrl.playerExceptSelect" theme="selectize" style="width: 100%;" reset-search-input='false' remove-selected="true" appendToBody="true">
+			    	<ui-select-match placeholder="选择去除球员...">
+			    		{{$item.player}}
+			    	</ui-select-match>
+			        <ui-select-choices  group-by="'positionEn'" group-filter="['PG', 'SG', 'SF', 'PF', 'C']" repeat ="player in allPlayer | propsFilter: {player: $select.search, nameEn: $select.search, positionEn: $select.search, team: $select.search}" value="{{player}}" position="down">
+			        <div ng-bind-html="player.player | highlight: $select.search"></div>
+				      <small>
+				    	<label ng-switch="player.status">
+				      		<label ng-switch-when="0" style="color:DarkGreen" >{{player.statusCn}}</label>
+				      		<label ng-switch-when="1" style="color:#FF8C00" >{{player.statusCn}}</label>
+				      		<label ng-switch-when="2" style="color:#FF4500" >{{player.statusCn}}</label>
+				      	</label>
+				      	球队: {{player.team}}
+			        	薪资: {{player.salary}}
+				      </small>
+			        </ui-select-choices>
+			    </ui-select>
 			</div>
 		    <div>
+		    	<button ng-click="reset()">reset</button>
 				<button ng-click="search()">search</button>
 			</div>
 		</div>

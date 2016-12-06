@@ -1,3 +1,9 @@
+final: electron/node_modules deploy
+	@Electron electron
+
+electron/node_modules: electron/package.json
+	@(cd electron && npm install)
+
 deploy: draft-api 
 	@cp draft-api electron/app/lib
 

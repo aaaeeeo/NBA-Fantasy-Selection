@@ -55,8 +55,8 @@
 				      <small>
 				      	<text ng-switch="player.status">
 					      		<text ng-switch-when="0" style="color:DarkGreen" >{{player.statusCn}}</text>
-					      		<text ng-switch-when="1" style="color:#FF8C00" >{{player.statusCn}}</text>
-					      		<text ng-switch-when="2" style="color:#FF4500" >{{player.statusCn}}</text>
+					      		<text ng-switch-when="1" style="color:#FF4500">{{player.statusCn}}</text>
+					      		<text ng-switch-when="2" style="color:#FF8C00" >{{player.statusCn}}</text>
 					    </text>
 					    球队: {{player.team}}
 				        薪资: {{player.salary}}
@@ -75,8 +75,8 @@
 				      <small>
 				    	<label ng-switch="player.status">
 				      		<label ng-switch-when="0" style="color:DarkGreen" >{{player.statusCn}}</label>
-				      		<label ng-switch-when="1" style="color:#FF8C00" >{{player.statusCn}}</label>
-				      		<label ng-switch-when="2" style="color:#FF4500" >{{player.statusCn}}</label>
+				      		<label ng-switch-when="1" style="color:#FF4500" >{{player.statusCn}}</label>
+				      		<label ng-switch-when="2" style="color:#FF8C00"  >{{player.statusCn}}</label>
 				      	</label>
 				      	球队: {{player.team}}
 			        	薪资: {{player.salary}}
@@ -85,7 +85,7 @@
 			    </ui-select>
 			</div>
 		    <div>
-		    	<button ng-click="reset()">reset</button>
+		    	<button ng-click="resetSameRoom()">reset</button>
 				<button ng-click="search()">search</button>
 			</div>
 		</div>

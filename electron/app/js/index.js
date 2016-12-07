@@ -75,7 +75,7 @@ function ResultCtrl($scope, $http) {
 	$scope.playerHave = "选择固定球员";
 	$scope.playerNotHave= "选择删除球员";
 	$scope.playerPostion = ['PG', 'SG', 'SF', 'PF', 'C'];
-	$scope.playerStatusMap = ['正常','待定','伤病'];
+	$scope.playerStatusMap = ['正常','伤病','待定'];
 
 	var passphrase = "DK9S9SDZHZMKFPMM";
 
@@ -84,13 +84,11 @@ function ResultCtrl($scope, $http) {
 		$scope.num_type = 0;
 		$scope.people = [];
 		$scope.allPlayer = [];
-		$scope.allPlayerP = [];
-		$scope.allPlayerP1 = [];
-		$scope.allPlayerP2 = [];
-		$scope.allPlayerP3 = [];
-		$scope.allPlayerP4 = [];
-		$scope.allPlayerP5 = [];
-		$scope.allPlayerWithPosition = [];
+
+		vm.playerFixSelect = undefined;
+		vm.playerExceptSelect= undefined;
+	}
+	$scope.resetSameRoom = function() {
 
 		vm.playerFixSelect = undefined;
 		vm.playerExceptSelect= undefined;
@@ -228,16 +226,10 @@ function ResultCtrl($scope, $http) {
 		$scope.num_type = parseInt(room.num_type)
 		allMember(room.id, $scope.team_user_token, function(re) {
 			//console.log('selectPlayer',re);
-			var reArr = [
-				[], $scope.allPlayerP1, $scope.allPlayerP2, $scope.allPlayerP3, $scope.allPlayerP4, $scope.allPlayerP5
-			];
 			for (var i in re) {
-				reArr[parseInt(re[i].position)].push(re[i]);
 				re[i].positionEn =  $scope.playerPostion [parseInt(re[i].position) - 1];
 				re[i].statusCn = $scope.playerStatusMap[parseInt(re[i].status)];
 			}
-			reArr.shift();
-			$scope.allPlayerWithPosition = reArr;
 			$scope.$apply(function() {
 				$scope.allPlayer = re;
 				$scope.status_text = "完成";

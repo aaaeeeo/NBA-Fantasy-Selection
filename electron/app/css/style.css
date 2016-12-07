@@ -40,6 +40,14 @@
 	width: 50%;
 	float:right;
 }
+.lcol {
+	float : left;
+}
+
+.rcol {
+	width: 80%;
+	float:right;
+}
 
 
 table {

@@ -66,6 +66,7 @@ app.controller('SelectCtrl', SelectCtrl);
 
 function ResultCtrl($scope, $http) {
 	var vm = this;
+	$scope.imgUrl = "http://cdn.ttnba.nbahero.com/img/players_head/"
 	$scope.room = [];
 	$scope.selectedArr = {
 		'playerChoose': []

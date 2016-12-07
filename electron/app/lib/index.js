@@ -47,7 +47,7 @@ function ajax(postForm, cb) {
 
 
 function match(allMember, matchMember, team, cb) {
-	//console.log(allMember, matchMember, team);
+	console.log(allMember, matchMember, team);
 	//console.log(member);
 	// console.log('allMember', allMember['10001']);
 	// console.log('memberMatch', matchMember['10001']);
@@ -55,22 +55,23 @@ function match(allMember, matchMember, team, cb) {
 	var result = [];
 	var count = 0;
 	for (member in matchMember) {
-		if (matchMember[member].score < 10) {
-			continue;
-		}
+		var pid = matchMember[member].id;
+		var pobj = matchMember[member];
 		//console.log(colors.green('NO. %s'), count);
 		var player = {
-			id: matchMember[member].id,
-			player: allMember[matchMember[member].id].name,
-			point: matchMember[member].score,
-			salary: matchMember[member].salary,
-			team: team[matchMember[member].team_id].short_name,
-			lastTen: matchMember[member].last_ten_scores,
-			xjb: (matchMember[member].score / matchMember[member].salary).toFixed(3),
-			timeAvg: matchMember[member].court_time_avg,
-			position: matchMember[member].position,
-			nameEn: allMember[matchMember[member].id].e_name,
-			status: matchMember[member].state
+			id: pid,
+			player: allMember[pid].name,
+			point: pobj.score,
+			salary: pobj.salary,
+			team: team[pobj.team_id].short_name,
+			lastTen: pobj.last_ten_scores,
+			xjb: (pobj.score / pobj.salary).toFixed(3),
+			timeAvg: pobj.court_time_avg,
+			position: pobj.position,
+			nameEn: allMember[pid].e_name,
+			status: pobj.state,
+			img: allMember[pid].img,
+			number: allMember[pid].number
 		};
 		result.push(player);
 		// console.log(

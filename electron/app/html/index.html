@@ -48,18 +48,19 @@
 
 				<ui-select multiple close-on-select="false" ng-model="ctrl.playerFixSelect" theme="selectize" style="width: 100%;" reset-search-input='false' remove-selected="true" appendToBody="true">
 			    	<ui-select-match placeholder="选择固定球员...">
-			    		{{$item.player}}
+			    		{{$item.positionEn}}:{{$item.player}}
 			    	</ui-select-match>
 			        <ui-select-choices  group-by="'positionEn'" group-filter="['PG', 'SG', 'SF', 'PF', 'C']" repeat =" player in allPlayer | propsFilter: {player: $select.search, nameEn: $select.search, positionEn: $select.search, team: $select.search}"  value="{{player}}" position="down">
-			        <div ng-bind-html="player.player | highlight: $select.search"></div>
-				      <small>
+			        <img class='lcol' style="width: 50px; height: 40px;" src="{{imgUrl+player.img}}" ></img>
+			        <div class='rcol' ng-bind-html="player.player | highlight: $select.search"></div>
+				      <small class='rcol'>
 				      	<text ng-switch="player.status">
 					      		<text ng-switch-when="0" style="color:DarkGreen" >{{player.statusCn}}</text>
 					      		<text ng-switch-when="1" style="color:#FF4500">{{player.statusCn}}</text>
 					      		<text ng-switch-when="2" style="color:#FF8C00" >{{player.statusCn}}</text>
 					    </text>
-					    球队: {{player.team}}
-				        薪资: {{player.salary}}
+					    {{player.team}}#{{player.number}}
+				        ${{player.salary}} 场均{{player.timeAvg}}分钟{{player.point}}分
 				      </small>
 			        </ui-select-choices>
 			    </ui-select>
@@ -68,18 +69,19 @@
 			<div class='col2'>	
 			    <ui-select multiple close-on-select="false" ng-model="ctrl.playerExceptSelect" theme="selectize" style="width: 100%;" reset-search-input='false' remove-selected="true" appendToBody="true">
 			    	<ui-select-match placeholder="选择去除球员...">
-			    		{{$item.player}}
+			    		{{$item.positionEn}}:{{$item.player}}
 			    	</ui-select-match>
 			        <ui-select-choices  group-by="'positionEn'" group-filter="['PG', 'SG', 'SF', 'PF', 'C']" repeat ="player in allPlayer | propsFilter: {player: $select.search, nameEn: $select.search, positionEn: $select.search, team: $select.search}" value="{{player}}" position="down">
-			        <div ng-bind-html="player.player | highlight: $select.search"></div>
-				      <small>
-				    	<label ng-switch="player.status">
-				      		<label ng-switch-when="0" style="color:DarkGreen" >{{player.statusCn}}</label>
-				      		<label ng-switch-when="1" style="color:#FF4500" >{{player.statusCn}}</label>
-				      		<label ng-switch-when="2" style="color:#FF8C00"  >{{player.statusCn}}</label>
-				      	</label>
-				      	球队: {{player.team}}
-			        	薪资: {{player.salary}}
+			        <img class='lcol' style="width: 50px; height: 40px;" src="{{imgUrl+player.img}}" ></img>
+			        <div class='rcol' ng-bind-html="player.player | highlight: $select.search"></div>
+				      <small class='rcol'>
+				      	<text ng-switch="player.status">
+					      		<text ng-switch-when="0" style="color:DarkGreen" >{{player.statusCn}}</text>
+					      		<text ng-switch-when="1" style="color:#FF4500">{{player.statusCn}}</text>
+					      		<text ng-switch-when="2" style="color:#FF8C00" >{{player.statusCn}}</text>
+					    </text>
+					    {{player.team}}#{{player.number}}
+				        ${{player.salary}} 场均{{player.timeAvg}}分钟{{player.point}}分
 				      </small>
 			        </ui-select-choices>
 			    </ui-select>

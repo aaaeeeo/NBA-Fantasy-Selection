@@ -226,9 +226,12 @@ function ResultCtrl($scope, $http) {
 		$scope.num_type = parseInt(room.num_type)
 		allMember(room.id, $scope.team_user_token, function(re) {
 			//console.log('selectPlayer',re);
+			vm.playerExceptSelect = [];
 			for (var i in re) {
-				re[i].positionEn =  $scope.playerPostion [parseInt(re[i].position) - 1];
+				re[i].positionEn =  $scope.playerPostion[parseInt(re[i].position) - 1];
 				re[i].statusCn = $scope.playerStatusMap[parseInt(re[i].status)];
+				if(re[i].status != 0)
+					vm.playerExceptSelect.push(re[i]);
 			}
 			$scope.$apply(function() {
 				$scope.allPlayer = re;

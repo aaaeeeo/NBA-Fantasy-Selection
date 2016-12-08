@@ -1,18 +1,4 @@
-var fs = require('fs');
-var colors = require('colors');
 var rq = require('request');
-var ProgressBar = require('progress');
-// fs.readFile('./allmember.json', 'utf8', function(err, allMember) {
-// 	fs.readFile('./member.json', 'utf8', function(er, memberStr) {
-// 		fs.readFile('./team.json', 'utf8', function(er, team) {
-// 			var matchMember = JSON.parse(memberStr);
-// 			//match(JSON.parse(allMember), matchMember.result.member_list, JSON.parse(team));
-// 		});
-// 	});
-// });
-
-
-
 
 function getData(room, team_user_token, cb) {
 	console.log(room);
@@ -47,11 +33,7 @@ function ajax(postForm, cb) {
 
 
 function match(allMember, matchMember, team, cb) {
-	console.log(allMember, matchMember, team);
-	//console.log(member);
-	// console.log('allMember', allMember['10001']);
-	// console.log('memberMatch', matchMember['10001']);
-	// console.log('team',team[matchMember['10001'].team_id]);
+	//console.log(allMember, matchMember, team);
 	var result = [];
 	var count = 0;
 	for (member in matchMember) {
@@ -74,12 +56,6 @@ function match(allMember, matchMember, team, cb) {
 			number: allMember[pid].number
 		};
 		result.push(player);
-		// console.log(
-		// 	'NO.',count
-		// 	,'-->player: '.green,allMember[matchMember[member].id].name
-		// 	,', point :',matchMember[member].score + ''.green
-		// 	,', salary :'.red,matchMember[member].salary
-		// 	,', team: ',team[matchMember[member].team_id].short_name);
 		count++;
 	}
 
@@ -91,10 +67,6 @@ function match(allMember, matchMember, team, cb) {
 		return 0;
 	});
 	cb(result);
-	// for (p in result) {
-	// 	cb()
-	// 	console.log(JSON.stringify(result[p]));
-	// }
 }
 
 exports.getData = getData;

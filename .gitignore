@@ -9,3 +9,4 @@ node_modules
 *.json
 *.csv
 .DS_Store
+builds

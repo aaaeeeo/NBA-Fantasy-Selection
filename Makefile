@@ -12,12 +12,24 @@ ifeq ($(OS),Darwin)
 else
   OPEN= 
 endif
+UNAME_P:=$(shell uname -m)
+ifeq ($(UNAME_P),x86_64)
+    ARCH = x64
+else
+	ifneq ($(filter %86,$(UNAME_P)),)
+	    ARCH = ia32
+	endif
+	ifneq ($(filter arm%,$(UNAME_P)),)
+	    ARCH = armv7l
+	endif
+endif
+GENDIR=$(APPNAME)-$(LOWER_OS)-$(ARCH)
 
 debug: $(GUIDIR)/node_modules deploy
 	@Electron $(GUIDIR)
 
 release: $(BLDDIR)
-	@$(OPEN) ./$(BLDDIR)/$(APPNAME)-$(LOWER_OS)*/$(APPNAME)*
+	@$(OPEN) ./$(BLDDIR)/$(GENDIR)/$(APPNAME)*
 
 package: $(BLDDIR)
 

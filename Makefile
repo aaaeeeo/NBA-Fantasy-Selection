@@ -1,20 +1,43 @@
-final: electron/node_modules deploy
-	@Electron electron
+CXX=g++
+CPPFLAGS=-std=c++11
 
-electron/node_modules: electron/package.json
-	@(cd electron && npm install)
+GUIDIR=electron
+BLDDIR=builds
+CAPI=draft-api
+APPNAME=NBA-Selection
+OS:=$(shell uname)
+LOWER_OS=$(shell echo $(OS) | tr A-Z a-z)
+ifeq ($(OS),Darwin)
+  OPEN=open
+else
+  OPEN= 
+endif
 
-deploy: draft-api 
-	@cp draft-api electron/app/lib
+debug: $(GUIDIR)/node_modules deploy
+	@Electron $(GUIDIR)
 
-draft-api: draft-api.cpp
-	g++ draft-api.cpp -o draft-api -std=c++11
+release: $(BLDDIR)
+	@$(OPEN) ./$(BLDDIR)/$(APPNAME)-$(LOWER_OS)*/$(APPNAME)*
+
+package: $(BLDDIR)
+
+$(BLDDIR): deploy $(GUIDIR)/node_modules
+	@electron-packager $(GUIDIR) --overwrite --out=$@
+
+$(GUIDIR)/node_modules: $(GUIDIR)/package.json
+	@(cd $(GUIDIR) && npm install)
+
+deploy: $(CAPI) 
+	@cp $^ $(GUIDIR)/app/lib
+
+$(CAPI): $(CAPI).o
+	$(CXX) -o $@ $^
 
 clean:
-	@rm -f draft-api
+	@rm -f -r $(BLDDIR) *.o *~ $(CAPI)
 
-call: draft-api
-	@./draft-api 200 1 1 1 1 1 1 1 1 < result.json 2&>null
+call: $(CAPI)
+	@./$(CAPI) 200 1 1 1 1 1 1 1 1 < result.json 2&>null
 
-run: draft-api
-	@./draft-api 200 1 1 1 1 1 1 1 1 < result.json
+run: $(CAPI)
+	@./$(CAPI) 200 1 1 1 1 1 1 1 1 < result.json

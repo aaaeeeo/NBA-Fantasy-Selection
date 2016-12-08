@@ -8,5 +8,6 @@ node_modules
 *.bk
 *.json
 *.csv
+*.o
 .DS_Store
 builds

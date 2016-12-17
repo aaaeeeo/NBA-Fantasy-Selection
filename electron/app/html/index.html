@@ -137,10 +137,10 @@
     		</md-sidenav>
 			
 		    <div class="operation"  layout="row" layout-xs="column">
-		    	<md-button class="md-raised md-primary" ng-click="resetSameRoom()">reset</md-button>
-				<md-button class="md-raised" ng-click="search()">search</md-button>
+		    	<md-button class="md-raised md-primary" ng-click="resetSameRoom()">重置</md-button>
+				<md-button class="md-raised" ng-click="search()">计算</md-button>
          		<md-button class="md-raised" ng-click="toggleRight()" ng-hide="isOpenRight()" class="md-primary">
-            	输入百分比
+            	评分比例
           		</md-button>
 			</div>
 
@@ -162,13 +162,13 @@
 			<table id='tbs' ng-table="tableParams">
 				<tr>
 					<th>ID</th>
-					<th>position</th>
-					<th>PLAYER</th>
-					<th>POINT</th>
-					<th>salary</th>
-					<th>lastTen</th>
-					<th>timeAvg</th>
-					<th>xjb</th>
+					<th>位置</th>
+					<th>姓名</th>
+					<th>场均得分</th>
+					<th>工资</th>
+					<th>最近十场得分</th>
+					<th>场均时间</th>
+					<th>性价比</th>
 				</tr>
 				<tr ng-repeat="person in people">
 	                <td>{{person.id}}</td>

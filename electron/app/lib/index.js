@@ -1,7 +1,8 @@
 var rq = require('request');
+var moment = require('moment');
 
 function getData(room, team_user_token, cb) {
-	console.log(room);
+	//console.log(room);
 	var postForm = {
 		"room_id": room,
 		"team_id": 0,
@@ -11,14 +12,20 @@ function getData(room, team_user_token, cb) {
 }
 
 function ajax(postForm, cb) {
+	var dataNickname = 'data_' +moment().format('YYYYMMDD'); 
+	dataNickname = 'data_20161215';
+	//console.log('dataNickname',dataNickname);
 	rq.post({
 		url: 'http://ttnba.nbahero.com/room/memberList?post_time=1480859517188',
 		form: postForm
 	}, function(err, httpResponse, body) {
-		rq.get('http://cdn.ttnba.nbahero.com/data/team.json?post_time=1480859517188', function(err2, response, body2) {
-			rq.get('http://cdn.ttnba.nbahero.com/data/members.json?post_time=1480859517188', function(err3, reponse2, body3) {
+		rq.get('http://cdn.ttnba.nbahero.com/'+dataNickname+'/team.json?post_time=1480859517188', function(err2, response, body2) {
+			rq.get('http://cdn.ttnba.nbahero.com/'+dataNickname+'/members.json?post_time=1480859517188', function(err3, reponse2, body3) {
 				//console.log(err);
 				//console.log(body,body2,body3);
+				//console.log('body',body);
+				//console.log('body',body2);
+				//console.log('body',body3);
 				var memberStr = body;
 				var allMember = body3;
 				var team = body2;

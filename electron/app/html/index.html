@@ -5,13 +5,19 @@
 	<link rel="stylesheet" type="text/css" href="../css/select.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-sanitize.js"></script>
+	<script src="../../node_modules/angular-material/angular-material.min.js"></script>
+	<script src="../../node_modules/angular-animate/angular-animate.min.js"></script>
 	<script src="../js/combox.js"></script>
 	<script src="../js/select.js"></script>
+	<script src="../../node_modules/angular-aria/angular-aria.min.js"></script>
+	<script></script>
 
 	<!-- <script src="../js/select2.min.js"></script> -->
 	<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/3.5.4/select2.css">    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.8.5/css/selectize.default.css">
+    <link rel="stylesheet" href="../../node_modules/angular-material/angular-material.min.css">
+
 </head>
 <body ng-app="myApp">
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
@@ -19,7 +25,7 @@
 	<div ng-controller="ResultCtrl as ctrl" class='container'>
 		<div><h2 id="status">{{status_text}}</h2></div>
 		<div class='head'>
-			<div id="room" class="select">
+			<div id="room" class="select roomSelect">
 			    <ui-select data-ng-model="roomModel" theme="selectize" ng-change="changedValue('room',roomModel)" style="width: 100%;">
 			    	<ui-select-match placeholder="选择一个房间或搜索...">
 			    		{{$select.selected.id+' - '+$select.selected.num_type_text+'-'+$select.selected.name || $select.selected}}
@@ -35,18 +41,9 @@
 			        </ui-select-choices>
 			    </ui-select>
 		    </div>
-		    <div class='col1'>
-		 		<!-- <div id="player"  class="select">
-			    	{{playerHave}}:
-				   	<select data-ng-model="playerSelectModel" ng-change="addSelectedPlayer('playerSelectedYes',playerSelectModel)" multiple>
-				        <option ng-repeat =" player in allPlayer"  value="{{player.id}}">{{player.player}}</option>
-				    </select>
-			    </div>
-			    <label>已选择球员:
-			    	<a ng-repeat =" playerx in player.playerSelectedYes">{{playerx.player}},</a>
-			    </label> -->
-
-				<ui-select multiple close-on-select="false" ng-model="ctrl.playerFixSelect" theme="selectize" style="width: 100%;" reset-search-input='false' remove-selected="true" appendToBody="true">
+			<div layout="row" layout-xs="column">
+		    <div  flex>
+				<ui-select multiple close-on-select="false" ng-model="ctrl.playerFixSelect" theme="selectize" style="width: 90%;" reset-search-input='false' remove-selected="true" appendToBody="true">
 			    	<ui-select-match placeholder="选择固定球员...">
 			    		{{$item.positionEn}}:{{$item.player}}
 			    	</ui-select-match>
@@ -66,8 +63,8 @@
 			    </ui-select>
 
 			</div>
-			<div class='col2'>	
-			    <ui-select multiple close-on-select="false" ng-model="ctrl.playerExceptSelect" theme="selectize" style="width: 100%;" reset-search-input='false' remove-selected="true" appendToBody="true">
+			<div  flex>	
+			    <ui-select multiple close-on-select="false" ng-model="ctrl.playerExceptSelect" theme="selectize" style="width: 90%;" reset-search-input='false' remove-selected="true" appendToBody="true">
 			    	<ui-select-match placeholder="选择去除球员...">
 			    		{{$item.positionEn}}:{{$item.player}}
 			    	</ui-select-match>
@@ -86,13 +83,80 @@
 			        </ui-select-choices>
 			    </ui-select>
 			</div>
-		    <div>
-		    	<button ng-click="resetSameRoom()">reset</button>
-				<button ng-click="search()">search</button>
+			
 			</div>
+
+	
+			<md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="right">
+				<md-toolbar class="md-theme-light">
+    			    <h1 class="md-toolbar-tools">输入百分比</h1>
+    			</md-toolbar>
+    			<!-- ResultCtrl -->
+    			  <md-content layout-padding="">
+    			    <form >
+    			    	<md-input-container>
+  						<input type="number" ng-model='game[9]' placeholder="第10场" value=1>
+						</md-input-container>
+						<md-input-container>
+  							<input type="number" ng-model='game[8]' placeholder="第9场" value=1>
+						</md-input-container>
+						<md-input-container>
+  							<input type="number"  ng-model='game[7]' placeholder="第8场" value=1>
+						</md-input-container>
+						<md-input-container>
+  							<input type="number" ng-model='game[6]' placeholder="第7场" value=1>
+						</md-input-container>
+						<md-input-container>
+  							<input type="number"  ng-model='game[5]'placeholder="第6场" value=1>
+						</md-input-container>
+    			     	<md-input-container>
+  						<input type="number" ng-model='game[4]' placeholder="第5场" value=1>
+						</md-input-container>
+						<md-input-container>
+  							<input type="number" ng-model='game[3]' placeholder="第4场" value=1>
+						</md-input-container>
+						<md-input-container>
+  							<input type="number"  ng-model='game[2]'placeholder="第3场" value=1>
+						</md-input-container>
+						<md-input-container>
+  							<input type="number" ng-model='game[1]' placeholder="第2场" value=1>
+						</md-input-container>
+						<md-input-container>
+  							<input type="number" ng-model='game[0]' placeholder="第1场" value=1>
+						</md-input-container>
+
+    			    </form>
+    			    <md-button ng-click="submit(game)" class="md-primary">
+    			      确定
+    			    </md-button>
+    			    <md-button ng-click="resetSide()" class="md-primary">
+    			      重置
+    			    </md-button>
+    			  </md-content>
+
+    		</md-sidenav>
+			
+		    <div class="operation"  layout="row" layout-xs="column">
+		    	<md-button class="md-raised md-primary" ng-click="resetSameRoom()">reset</md-button>
+				<md-button class="md-raised" ng-click="search()">search</md-button>
+         		<md-button class="md-raised" ng-click="toggleRight()" ng-hide="isOpenRight()" class="md-primary">
+            	输入百分比
+          		</md-button>
+			</div>
+
+			<h4>{{game}}</h4>
+
+			<md-chips ng-model="ctrl.roFruitNames" name="fruitName" readonly="ctrl.readonly" md-removable="ctrl.removable" md-max-chips="5">
+        		<md-chip-template>
+          			<strong>{{$chip}}</strong>
+          				<em>(fruit)</em>
+       			 </md-chip-template>
+      			</md-chips>
 		</div>
 
 		
+
+
 
 		<div class='content' >
 			<table id='tbs' ng-table="tableParams">

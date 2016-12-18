@@ -19,8 +19,13 @@
     "electron-packager": "^8.3.0"
   },
   "dependencies": {
+    "angular": "1.5.9",
+    "angular-animate": "1.5.9",
+    "angular-aria": "1.5.9",
+    "angular-material": "^1.1.1",
     "child_process": "^1.0.2",
     "electron-json-storage": "^2.1.0",
+    "moment": "^2.17.1",
     "request": "^2.79.0",
     "ui-select": "^0.19.6"
   }

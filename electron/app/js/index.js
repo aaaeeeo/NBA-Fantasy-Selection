@@ -290,22 +290,24 @@ function ResultCtrl($scope,$mdSidenav, $http) {
 			}
 			if (playerSelectedYesIdArr.indexOf($scope.allPlayer[p].id) >= 0) {
 				var picked = $scope.allPlayer[p];
-				console.log('picked-----',picked);
+				//console.log('picked-----',picked);
 				// picked.positionEn = $scope.playerPostion[parseInt(picked.position) - 1];
-				allSalary -= picked.salary;
 				var pos = parseInt(picked.position)-1;
 				var sup_pos = (pos == 0 || pos == 1 ? 5 : pos == 2 || pos == 3 ? 6 : -1);
 				//console.log(pos+" "+sup_pos);
 				if (positionArr[pos] > 0) {
 					positionArr[pos]--;
+					allSalary -= picked.salary;
 					$scope.people.push(picked);
 				}
 				else if (sup_pos != -1 && positionArr[sup_pos] > 0) {
 					positionArr[sup_pos]--;
+					allSalary -= picked.salary;
 					$scope.people.push(picked);
 				}
 				else if (positionArr[7] > 0) {
 					positionArr[7]--;
+					allSalary -= picked.salary;
 					$scope.people.push(picked);
 				}
 				continue;

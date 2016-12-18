@@ -98,7 +98,16 @@ tr:nth-child(even){background-color: #f2f2f2}
 }
 
 #status {
-	margin: 20px 0;
+	margin: 40px 0;
+	
+}
+
+.statusBox {
+	background-color: #3f51b5;
+	color: #dfebf8;	
+	padding: 5px 20px;
+	border:1px solid;
+	border-radius:25px;
 }
 
 

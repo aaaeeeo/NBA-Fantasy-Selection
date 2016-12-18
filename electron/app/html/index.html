@@ -23,7 +23,7 @@
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
 
 	<div ng-controller="ResultCtrl as ctrl" class='container'>
-		<div><h2 id="status">{{status_text}}</h2></div>
+		<div class="statusBox"><h2 id="status">{{status_text}}</h2></div>
 		<div class='head'>
 			<div id="room" class="select roomSelect">
 			    <ui-select data-ng-model="roomModel" theme="selectize" ng-change="changedValue('room',roomModel)" style="width: 100%;">
@@ -41,7 +41,7 @@
 			        </ui-select-choices>
 			    </ui-select>
 		    </div>
-			<div layout="row" layout-xs="column">
+			<div layout="row" layout-xs="column" class="">
 		    <div  flex>
 				<ui-select multiple close-on-select="false" ng-model="ctrl.playerFixSelect" theme="selectize" style="width: 90%;" reset-search-input='false' remove-selected="true" appendToBody="true">
 			    	<ui-select-match placeholder="选择固定球员...">
@@ -136,7 +136,7 @@
 
     		</md-sidenav>
 			
-		    <div class="operation"  layout="row" layout-xs="column">
+		    <div class="operation"  layout="row" layout-xs="column"	>
 		    	<md-button class="md-raised md-primary" ng-click="resetSameRoom()">reset</md-button>
 				<md-button class="md-raised" ng-click="search()">search</md-button>
          		<md-button class="md-raised" ng-click="toggleRight()" ng-hide="isOpenRight()" class="md-primary">

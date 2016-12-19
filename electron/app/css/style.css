@@ -159,6 +159,10 @@ tr:nth-child(even){background-color: #f2f2f2}
 	
 }
 
+.operation {
+	margin-top: 50px 0;
+}
+
 /*.statusBox {
 	background-color: #3f51b5;
 	color: #dfebf8;	

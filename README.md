@@ -10,7 +10,10 @@ Adjust and customize weights to calculate projected points used for prediction.
 Friendly web GUI calling C++ API and display result.  
 
 ## Usage
-
+```bash
+git clone https://github.com/aaaeeeo/NBA-Fantasy-Selection.git
+cd NBA-Fantasy-Selection
+```
 ### C++ CLI API
 ```bash
 make api

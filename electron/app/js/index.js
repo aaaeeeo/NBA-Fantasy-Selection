@@ -72,6 +72,8 @@ function ResultCtrl($scope,$mdSidenav, $http) {
 
 	$scope.resetSide = function() {
 		$scope.game = $scope.gameMaster.slice();
+		$scope.weight_avg = 1;
+		$scope.weight_std = -1;
 	}
    $scope.submit = function (game) {
       // Component lookup should always be available since we are not using `ng-if`
@@ -241,7 +243,7 @@ function ResultCtrl($scope,$mdSidenav, $http) {
 			}
 			$scope.$apply(function() {
 				$scope.allPlayer = re;
-				$scope.status_text = "完成";
+				$scope.status_text = "完成（待定、伤病球员已自动选择为去除）";
 				vm.activated = false;
 			});
 			cb();
@@ -354,9 +356,16 @@ function ResultCtrl($scope,$mdSidenav, $http) {
 	function caluPoint(player){
 		var pointAfterCalu = 0;
 		var p = $scope.game.reduce(add, 0);
+		player.lastTen = player.lastTen.map(function(value){
+			return parseFloat(value);
+		});
 		for(var i=0; i<10; i++){
-			pointAfterCalu += $scope.game[i]*player.lastTen[i]/p;
+			pointAfterCalu += $scope.game[i] * player.lastTen[i]/p;
 		}
+		pointAfterCalu += $scope.weight_avg * player.score;
+		console.log(player.score, player.lastTen);
+		pointAfterCalu += $scope.weight_std * standardDeviation(player.lastTen);
+		console.log($scope.weight_std * standardDeviation(player.lastTen), pointAfterCalu);
 		player.point = pointAfterCalu+'';
 		//console.log('after calu:',player);
 		return player;
@@ -364,6 +373,31 @@ function ResultCtrl($scope,$mdSidenav, $http) {
 	function add(a, b) {
     	return a + b;
 	}
+
+	function standardDeviation(values){
+	  var avg = average(values);
+	  
+	  var squareDiffs = values.map(function(value){
+	    var diff = value - avg;
+	    var sqrDiff = diff * diff;
+	    return sqrDiff;
+	  });
+	  
+	  var avgSquareDiff = average(squareDiffs);
+
+	  var stdDev = Math.sqrt(avgSquareDiff);
+	  return stdDev;
+	}
+
+	function average(data){
+	  var sum = data.reduce(function(sum, value){
+	    return sum + value;
+	  }, 0);
+
+	  var avg = sum / data.length;
+	  return avg;
+	}
+
 	$scope.getAccount();
 
 	$scope.search = function(){

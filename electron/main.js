@@ -18,7 +18,8 @@ function createWindow () {
   mainWindow.loadURL('file://' + __dirname + '/app/html/index.html')
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools()
+  // mainWindow.webContents.openDevTools()
+  mainWindow.maximize()
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function () {

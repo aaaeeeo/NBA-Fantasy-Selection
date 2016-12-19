@@ -50,7 +50,7 @@ function match(allMember, matchMember, team, cb) {
 		var player = {
 			id: pid,
 			player: allMember[pid].name,
-			point: pobj.score,
+			score: pobj.score,
 			salary: pobj.salary,
 			team: team[pobj.team_id].short_name,
 			lastTen: pobj.last_ten_scores,

@@ -65,7 +65,7 @@
 					      		<text ng-switch-when="2" style="color:#FF8C00" >{{player.statusCn}}</text>
 					    </text>
 					    {{player.team}}#{{player.number}}
-				        ${{player.salary}} 场均{{player.timeAvg}}分钟{{player.point}}分
+				        ${{player.salary}} 场均{{player.timeAvg}}分钟{{player.score}}分
 				      </small>
 			        </ui-select-choices>
 			    </ui-select>
@@ -86,7 +86,7 @@
 					      		<text ng-switch-when="2" style="color:#FF8C00" >{{player.statusCn}}</text>
 					    </text>
 					    {{player.team}}#{{player.number}}
-				        ${{player.salary}} 场均{{player.timeAvg}}分钟{{player.point}}分
+				        ${{player.salary}} 场均{{player.timeAvg}}分钟{{player.score}}分
 				      </small>
 			        </ui-select-choices>
 			    </ui-select>
@@ -103,10 +103,10 @@
     			  <md-content layout-padding="">
     			    <form >
     			    	<md-input-container>
-  							<input type="number" ng-model='avg' placeholder="场均得分" value=1>
+  							<input type="number" ng-model='weight_avg' placeholder="场均得分" value=1>
 						</md-input-container>
 						<md-input-container>
-  							<input type="number" ng-model='var' placeholder="最近十场方差" value=1>
+  							<input type="number" ng-model='weight_std' placeholder="最近十场标准差" value=1>
 						</md-input-container>
     			    	<md-input-container>
   							<input type="number" ng-model='game[9]' placeholder="第10场" value=1>
@@ -161,12 +161,7 @@
 
 			<!-- <h4>{{game}}</h4> -->
 
-			<md-chips ng-model="ctrl.roFruitNames" name="fruitName" readonly="ctrl.readonly" md-removable="ctrl.removable" md-max-chips="5">
-        		<md-chip-template>
-          			<strong>{{$chip}}</strong>
-          				<em>(fruit)</em>
-       			 </md-chip-template>
-      			</md-chips>
+		 	<hr>
 		</div>
 
 		
@@ -189,7 +184,7 @@
 	                <td>{{person.id}}</td>
 	                <td>{{person.positionEn}}</td>
 	                <td>{{person.player}}</td>
-	                <td>{{person.point}}</td>
+	                <td>{{person.score}}</td>
 	                <td>{{person.salary}}</td>
 	                <td>{{person.lastTen.toString()}}</td>
 	               <!--  <td>{{playerPostion[parseInt({{person.position}})-1]}}</td> -->

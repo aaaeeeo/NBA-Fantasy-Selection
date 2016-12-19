@@ -2,7 +2,7 @@ const exec = require('child_process').exec;
 
 // < $(fileStr)
 function getData(numSalary, posArr, fileStr, cb) {
-	console.log('fileStr',fileStr);
+	//console.log('fileStr',fileStr);
 	var execArg = __dirname + '/draft-api ' + numSalary; 
 	for(i in posArr)
 		execArg += " " + posArr[i];

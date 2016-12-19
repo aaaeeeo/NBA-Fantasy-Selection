@@ -46,6 +46,8 @@ $(GUIDIR)/node_modules: $(GUIDIR)/package.json
 deploy: $(CAPI) 
 	@cp $^ $(GUIDIR)/app/lib
 
+api: $(CAPI)
+
 $(CAPI): $(CAPI).o
 	$(CXX) -o $@ $^
 

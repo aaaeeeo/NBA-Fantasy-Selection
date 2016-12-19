@@ -20,7 +20,7 @@ using namespace rapidjson;
 
 int err_input()
 {
-    cerr<<"ERROR: ILLAGE INPUT. Please use DKSalaries.csv as stdin."<<endl;
+    cerr<<"ERROR: ILLAGE INPUT. Please use DKSalaries.csv or .json as stdin."<<endl;
     cerr<<"ABORT"<<endl;
     return 1;
 }

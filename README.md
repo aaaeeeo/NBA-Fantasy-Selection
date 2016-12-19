@@ -15,7 +15,7 @@ Friendly web GUI calling C++ API and display result.
 ```bash
 make api
 # ./draft-api [salary] [nPG] [nSG] [nSF] [nPF] [nC] [nG] [nF] [nAny] < [input Data file]
-./draft-api 200 1 1 1 1 1 1 1 1 < result.json
+./draft-api 200 1 1 1 1 1 1 1 1 < DKSalaries.csv
 ```
 
 ### Electron GUI

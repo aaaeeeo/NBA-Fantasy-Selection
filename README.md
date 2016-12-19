@@ -1,7 +1,7 @@
-# NBA Fantasy Draft
+# NBA Fantasy Draft Tool
 ## Introduction
 NBA player optimal selection for online fantasy game based on dynamic programming.   
-Support data format from (draftking)[https://github.com/aaaeeeo/NBA-Fantasy-Selection.git] and (Tiantian NBA)[ttnba.nbahero.com] now.  
+Support data format from [draftking](https://github.com/aaaeeeo/NBA-Fantasy-Selection.git) and [Tiantian NBA](ttnba.nbahero.com) now.  
 
 ## Electron GUI for Tiantian NBA
 Automatic login and get rooms lists and corresponding players lists from server.    
@@ -19,7 +19,7 @@ make api
 
 ### Electron GUI
 Make sure node.js is installed.    
-If it is not, (install)[https://nodejs.org/en/download/package-manager/] it.   
+If it is not, [install](https://nodejs.org/en/download/package-manager/) it.   
 ```bash
 make debug  # run in debug mode
 make package # build release package (in ./builds)

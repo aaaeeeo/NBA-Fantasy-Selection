@@ -1,7 +1,7 @@
 # NBA Fantasy Draft Tool
 ## Introduction
 NBA player optimal selection for online fantasy game based on dynamic programming.   
-Support data format from [draftking](https://github.com/aaaeeeo/NBA-Fantasy-Selection.git) and [Tiantian NBA](ttnba.nbahero.com) now.  
+Support data format from [draftking](http://draftkings.com) and [Tiantian NBA](http://ttnba.nbahero.com) now.  
 
 ## Electron GUI for Tiantian NBA
 Automatic login and get rooms lists and corresponding players lists from server.    

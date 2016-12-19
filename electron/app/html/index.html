@@ -23,11 +23,19 @@
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
 
 	<div ng-controller="ResultCtrl as ctrl" class='container'>
-		<div class="statusBox"><h2 id="status">{{status_text}}</h2></div>
+		<!-- <hr ng-class="{'visible' : ctrl.activated}"> -->
+		<div class="statusBox">
+		    <md-progress-linear md-mode="query" ng-disabled="!ctrl.activated"></md-progress-linear>
+		    <div class="bottom-block">
+		      <span>{{status_text}}</span>
+		    </div>
+		</div>
+
+		<!-- <div class="statusBox"><h2 id="status">{{status_text}}</h2></div> -->
 		<div class='head'>
 			<div id="room" class="select roomSelect">
-			    <ui-select data-ng-model="roomModel" theme="selectize" ng-change="changedValue('room',roomModel)" style="width: 100%;">
-			    	<ui-select-match placeholder="选择一个房间或搜索...">
+			    <ui-select data-ng-model="roomModel" theme="selectize" ng-change="changedValue('room',roomModel)" style="width: 100%;" ng-disabled="ctrl.activated">
+			    	<ui-select-match placeholder="选择或搜索一个房间...">
 			    		{{$select.selected.id+' - '+$select.selected.num_type_text+'-'+$select.selected.name || $select.selected}}
 			    	</ui-select-match>
 			        <ui-select-choices group-by="'num_type_text'" repeat ="room in room | propsFilter: {name: $select.search, num_type_text: $select.search}"  value="{{room}}" position="down">
@@ -43,7 +51,7 @@
 		    </div>
 			<div layout="row" layout-xs="column" class="">
 		    <div  flex>
-				<ui-select multiple close-on-select="false" ng-model="ctrl.playerFixSelect" theme="selectize" style="width: 90%;" reset-search-input='false' remove-selected="true" appendToBody="true">
+				<ui-select multiple close-on-select="false" ng-model="ctrl.playerFixSelect" theme="selectize" style="width: 90%;" reset-search-input='false' remove-selected="true" appendToBody="true" ng-disabled="ctrl.activated">
 			    	<ui-select-match placeholder="选择固定球员...">
 			    		{{$item.positionEn}}:{{$item.player}}
 			    	</ui-select-match>
@@ -64,7 +72,7 @@
 
 			</div>
 			<div  flex>	
-			    <ui-select multiple close-on-select="false" ng-model="ctrl.playerExceptSelect" theme="selectize" style="width: 90%;" reset-search-input='false' remove-selected="true" appendToBody="true">
+			    <ui-select multiple close-on-select="false" ng-model="ctrl.playerExceptSelect" theme="selectize" style="width: 90%;" reset-search-input='false' remove-selected="true" appendToBody="true" ng-disabled="ctrl.activated">
 			    	<ui-select-match placeholder="选择去除球员...">
 			    		{{$item.positionEn}}:{{$item.player}}
 			    	</ui-select-match>
@@ -95,7 +103,13 @@
     			  <md-content layout-padding="">
     			    <form >
     			    	<md-input-container>
-  						<input type="number" ng-model='game[9]' placeholder="第10场" value=1>
+  							<input type="number" ng-model='avg' placeholder="场均得分" value=1>
+						</md-input-container>
+						<md-input-container>
+  							<input type="number" ng-model='var' placeholder="最近十场方差" value=1>
+						</md-input-container>
+    			    	<md-input-container>
+  							<input type="number" ng-model='game[9]' placeholder="第10场" value=1>
 						</md-input-container>
 						<md-input-container>
   							<input type="number" ng-model='game[8]' placeholder="第9场" value=1>
@@ -107,16 +121,16 @@
   							<input type="number" ng-model='game[6]' placeholder="第7场" value=1>
 						</md-input-container>
 						<md-input-container>
-  							<input type="number"  ng-model='game[5]'placeholder="第6场" value=1>
+  							<input type="number"  ng-model='game[5]' placeholder="第6场" value=1>
 						</md-input-container>
     			     	<md-input-container>
-  						<input type="number" ng-model='game[4]' placeholder="第5场" value=1>
+  							<input type="number" ng-model='game[4]' placeholder="第5场" value=1>
 						</md-input-container>
 						<md-input-container>
   							<input type="number" ng-model='game[3]' placeholder="第4场" value=1>
 						</md-input-container>
 						<md-input-container>
-  							<input type="number"  ng-model='game[2]'placeholder="第3场" value=1>
+  							<input type="number"  ng-model='game[2]' placeholder="第3场" value=1>
 						</md-input-container>
 						<md-input-container>
   							<input type="number" ng-model='game[1]' placeholder="第2场" value=1>
@@ -138,14 +152,14 @@
 			
 
 		    <div class="operation"  layout="row" layout-xs="column">
-		    	<md-button class="md-raised md-primary" ng-click="resetSameRoom()">重置</md-button>
-				<md-button class="md-raised" ng-click="search()">计算</md-button>
+		    	<md-button class="md-raised md-primary" ng-click="resetSameRoom()" ng-disabled="ctrl.activated">重置</md-button>
+				<md-button class="md-raised" ng-click="search()" ng-disabled="ctrl.activated">计算</md-button>
          		<md-button class="md-raised" ng-click="toggleRight()" ng-hide="isOpenRight()" class="md-primary">
             	评分比例
           		</md-button>
 			</div>
 
-			<h4>{{game}}</h4>
+			<!-- <h4>{{game}}</h4> -->
 
 			<md-chips ng-model="ctrl.roFruitNames" name="fruitName" readonly="ctrl.readonly" md-removable="ctrl.removable" md-max-chips="5">
         		<md-chip-template>

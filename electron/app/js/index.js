@@ -49,6 +49,7 @@ function RightCtrl($scope, $timeout, $mdSidenav, $log) {
 
 function ResultCtrl($scope,$mdSidenav, $http) {
 	var vm = this;
+	vm.activated = true;
 	$scope.imgUrl = "http://cdn.ttnba.nbahero.com/img/players_head/"
 	$scope.room = [];
 	$scope.selectedArr = {
@@ -89,7 +90,7 @@ function ResultCtrl($scope,$mdSidenav, $http) {
         $mdSidenav(navID)
           .toggle()
           .then(function () {
-            $log.debug("toggle " + navID + " is done");
+            // $log.debug("toggle " + navID + " is done");
           });
       }
     }
@@ -219,12 +220,14 @@ function ResultCtrl($scope,$mdSidenav, $http) {
 			//console.log($scope.room);
 			$scope.selectedArr['room'] = $scope.room[0].id;
 			$scope.status_text = "完成";
+			vm.activated = false;
 			//$('select').select2();
 		});
 	}
 
 	$scope.selectPlayer = function(room,cb) {
 		console.log('room', room.id);
+		vm.activated = true;
 		$scope.status_text = "获取球员列表中...";
 		$scope.num_type = parseInt(room.num_type)
 		allMember(room.id, $scope.team_user_token, function(re) {
@@ -239,6 +242,7 @@ function ResultCtrl($scope,$mdSidenav, $http) {
 			$scope.$apply(function() {
 				$scope.allPlayer = re;
 				$scope.status_text = "完成";
+				vm.activated = false;
 			});
 			cb();
 			//console.log(reArr);
@@ -265,6 +269,7 @@ function ResultCtrl($scope,$mdSidenav, $http) {
 	}
 
 	$scope.getResult = function() {
+		vm.activated = true;
 		$scope.status_text = "计算选择方案中...";
 		var resStr = '';
 		//console.log($scope.player.playerSelectedNoIdArr);
@@ -339,6 +344,7 @@ function ResultCtrl($scope,$mdSidenav, $http) {
 			$scope.$apply(function() {
 				$scope.people = $scope.people;
 				$scope.status_text = "完成";
+				vm.activated = false;
 			});
 			//console.log('$scope.people', $scope.people);
 			return;

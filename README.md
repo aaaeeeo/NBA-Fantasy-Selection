@@ -6,7 +6,8 @@ Support data format from [draftking](http://draftkings.com) and [Tiantian NBA (c
 ## Electron GUI for Tiantian NBA
 Automatic login and get rooms lists and corresponding players lists from server.    
 Reserve players and exclude players based on your preference.    
-Adjust weights to calculate projected points used for prediction.   
+Adjust and customize weights to calculate projected points used for prediction.   
+Friendly web GUI calling C++ API and display result.  
 
 ## Usage
 

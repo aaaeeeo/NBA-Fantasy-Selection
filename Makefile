@@ -26,7 +26,9 @@ endif
 GENDIR=$(APPNAME)-$(LOWER_OS)-$(ARCH)
 
 debug: $(GUIDIR)/node_modules deploy
+	@cp $(GUIDIR)/main.js.debug $(GUIDIR)/main.js
 	@Electron $(GUIDIR)
+	@rm $(GUIDIR)/main.js
 
 release: $(BLDDIR)
 	@$(OPEN) ./$(BLDDIR)/$(GENDIR)/$(APPNAME)*
@@ -34,7 +36,9 @@ release: $(BLDDIR)
 package: $(BLDDIR)
 
 $(BLDDIR): deploy $(GUIDIR)/node_modules
+	@cp $(GUIDIR)/main.js.release $(GUIDIR)/main.js
 	@electron-packager $(GUIDIR) --overwrite --out=$@
+	@rm $(GUIDIR)/main.js
 
 $(GUIDIR)/node_modules: $(GUIDIR)/package.json
 	@(cd $(GUIDIR) && npm install)

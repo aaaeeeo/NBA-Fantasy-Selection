@@ -13,3 +13,4 @@ node_modules
 builds
 *.ipynb*
 electron/app/lib/draft-api
+electron/main.js

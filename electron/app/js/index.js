@@ -203,12 +203,13 @@ function ResultCtrl($scope,$mdSidenav, $http) {
 			method: 'GET',
 			url: 'http://ttnba.nbahero.com/room/publicRoomList',
 			params: {
-				"type": "",
 				"TEAM_USER_TOKEN": team_user_token,
 				"last_room_id":0,
 				"page_count":1000,
-				"type":'',
-				"version":"2.0.2"
+				"type": 0,
+				"version":"2.0.0",
+				"max_ticket": -1,
+				"min_ticket": -1
 			}
 
 		}).then(function(response, status) {

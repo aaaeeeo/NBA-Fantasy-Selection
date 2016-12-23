@@ -364,9 +364,9 @@ function ResultCtrl($scope,$mdSidenav, $http) {
 			pointAfterCalu += $scope.game[i] * player.lastTen[i]/p;
 		}
 		pointAfterCalu += $scope.weight_avg * player.score;
-		console.log(player.score, player.lastTen);
+		//console.log(player.score, player.lastTen);
 		pointAfterCalu += $scope.weight_std * standardDeviation(player.lastTen);
-		console.log($scope.weight_std * standardDeviation(player.lastTen), pointAfterCalu);
+		//console.log($scope.weight_std * standardDeviation(player.lastTen), pointAfterCalu);
 		player.point = pointAfterCalu+'';
 		//console.log('after calu:',player);
 		return player;

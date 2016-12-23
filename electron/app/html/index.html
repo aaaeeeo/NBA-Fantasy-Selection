@@ -50,7 +50,7 @@
 			    </ui-select>
 		    </div>
 			<div layout="row" layout-xs="column" class="">
-		    <div  flex>
+		    <div flex="40">
 				<ui-select multiple close-on-select="false" ng-model="ctrl.playerFixSelect" theme="selectize" style="width: 90%;" reset-search-input='false' remove-selected="true" appendToBody="true" ng-disabled="ctrl.activated">
 			    	<ui-select-match placeholder="选择固定球员...">
 			    		{{$item.positionEn}}:{{$item.player}}
@@ -71,8 +71,8 @@
 			    </ui-select>
 
 			</div>
-			<div  flex>	
-			    <ui-select multiple close-on-select="false" ng-model="ctrl.playerExceptSelect" theme="selectize" style="width: 90%;" reset-search-input='false' remove-selected="true" appendToBody="true" ng-disabled="ctrl.activated">
+			<div flex="60">	
+			    <ui-select multiple close-on-select="false" ng-model="ctrl.playerExceptSelect" theme="selectize" style="width: 100%;" reset-search-input='false' remove-selected="true" appendToBody="true" ng-disabled="ctrl.activated">
 			    	<ui-select-match placeholder="选择去除球员...">
 			    		{{$item.positionEn}}:{{$item.player}}
 			    	</ui-select-match>
